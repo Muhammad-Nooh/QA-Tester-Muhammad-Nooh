@@ -3,68 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Nooh | Senior QA Engineer</title>
+  <title>Muhammad Nooh | Lead QA Engineering Hub</title>
   <style>
     :root {
-      --bg-color: #0b0f13;
-      --card-bg: #161b22;
-      --accent-color: #2ea043;
-      --text-main: #e6edf3;
-      --text-dim: #8b949e;
-      --border-color: #30363d;
-      --nav-height: 70px;
+      --bg-dark: #05070a;
+      --bg-surface: #0d1117;
+      --bg-card: #161b22;
+      --primary-glow: #2ea043;
+      --accent-gold: #d29922;
+      --text-bright: #ffffff;
+      --text-muted: #8b949e;
+      --border-glow: rgba(46, 160, 67, 0.3);
     }
 
     * { box-sizing: border-box; }
-
     body {
-      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-main);
+      background-color: var(--bg-dark);
+      color: var(--text-bright);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at center, #111d13 0%, #0b0f13 100%);
-      text-align: center;
-      padding: 20px;
-    }
-
-    header h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; }
-    header p { font-size: 1.5rem; color: var(--accent-color); font-weight: 300; }
-
+    /* Navigation */
     nav {
       position: sticky;
       top: 0;
-      height: var(--nav-height);
-      background: rgba(13, 17, 23, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(13, 17, 23, 0.9);
+      backdrop-filter: blur(15px);
       display: flex;
       justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      border-bottom: 1px solid var(--border-color);
+      gap: 25px;
+      padding: 20px;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-glow);
     }
 
     nav a {
-      color: var(--text-dim);
+      color: var(--text-muted);
       text-decoration: none;
-      margin: 0 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       transition: 0.3s;
     }
 
-    nav a:hover { color: var(--accent-color); }
+    nav a:hover { color: var(--primary-glow); }
 
     section {
       padding: 100px 20px;
@@ -73,8 +59,9 @@
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-bottom: 50px;
+      color: var(--primary-glow);
       display: flex;
       align-items: center;
       gap: 20px;
@@ -83,10 +70,11 @@
     .section-title::after {
       content: "";
       height: 1px;
-      background: var(--border-color);
+      background: var(--border-glow);
       flex-grow: 1;
     }
 
+    /* Grid & Cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -94,250 +82,174 @@
     }
 
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
       border-radius: 12px;
-      padding: 40px;
-      transition: 0.4s;
+      padding: 30px;
+      transition: 0.3s ease;
     }
 
-    .card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
+    .card:hover { transform: translateY(-5px); border-color: var(--primary-glow); }
 
-    .card h3 { color: var(--accent-color); margin-top: 0; }
-
-    .badge {
-      font-size: 0.65rem;
-      padding: 4px 10px;
-      background: rgba(46, 160, 67, 0.1);
-      color: var(--accent-color);
-      border: 1px solid var(--accent-color);
-      border-radius: 4px;
-      text-transform: uppercase;
-      margin-right: 5px;
-    }
-
-    .agile-flow {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .flow-step {
-      flex: 1;
-      min-width: 200px;
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      border-top: 4px solid var(--accent-color);
-    }
-
-    .experience-block {
-      margin-bottom: 60px;
-      padding-left: 30px;
-      border-left: 2px solid var(--border-color);
-      position: relative;
-    }
-
-    .experience-block::before {
-      content: "";
-      position: absolute;
-      left: -9px;
-      top: 0;
-      width: 16px;
-      height: 16px;
-      background: var(--accent-color);
-      border-radius: 50%;
-    }
-
-    .artifact-preview {
+    /* Test Lab Styling */
+    .lab-box {
       background: #000;
-      padding: 15px;
-      border-radius: 6px;
-      font-family: monospace;
-      font-size: 0.8rem;
-      color: #888;
+      border-radius: 8px;
+      padding: 20px;
       margin-top: 15px;
+      border-left: 4px solid var(--accent-gold);
+    }
+
+    .scenario-title {
+      color: var(--accent-gold);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .code-snippet {
+      font-family: 'Fira Code', monospace;
+      color: #7ee787;
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* External Work Portal */
+    .portal-section {
+      background: linear-gradient(145deg, #111d13 0%, #05070a 100%);
+      text-align: center;
+      border-radius: 20px;
+      padding: 80px 40px;
+      border: 1px solid var(--primary-glow);
+    }
+
+    .external-btn {
+      display: inline-block;
+      padding: 20px 50px;
+      background: var(--primary-glow);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+      transition: 0.3s;
+    }
+
+    .external-btn:hover {
+      transform: scale(1.05);
+      background: #238636;
     }
 
     footer {
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
-      background: #0d1117;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-glow);
+      color: var(--text-muted);
     }
 
-    .btn {
-      padding: 15px 40px;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.5rem; }
-      nav { display: none; }
-    }
+    @media (max-width: 768px) { nav { display: none; } }
   </style>
 </head>
 <body>
 
-<header>
-  <p>Software Quality Assurance Engineer</p>
-  <h1>Muhammad Nooh</h1>
-  <div style="margin-top: 30px;">
-    <span class="badge">Banking Systems</span>
-    <span class="badge">API Integrity</span>
-    <span class="badge">Agile Specialist</span>
-  </div>
-  <a href="#experience" class="btn">Explore My Work</a>
-</header>
-
 <nav>
-  <a href="#agile">Agile Framework</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Project Deep-Dive</a>
-  <a href="#tech">Technical Stack</a>
-  <a href="#contact">Contact</a>
+  <a href="#lab">Testing Lab</a>
+  <a href="#agile">Agile Flow</a>
+  <a href="#experience">History</a>
+  <a href="#portal">Work Repository</a>
 </nav>
 
+<section id="lab">
+  <h2 class="section-title">Interactive Testing Lab</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <span class="scenario-title">Scenario: Authentication Security</span>
+      <h3>Login Page Validation</h3>
+      <p>Verifying session management and brute-force protection for financial portals.</p>
+      <div class="lab-box">
+        <ul>
+          <li>SQL Injection testing on username fields.</li>
+          <li>Session timeout validation after 15 mins of inactivity.</li>
+          <li>MFA (Multi-Factor) trigger on unrecognized IP addresses.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="scenario-title">Scenario: Ledger Integrity</span>
+      <h3>Deposit & Loan Repayment</h3>
+      <p>Ensuring atomic transactions where DB records match frontend balance updates.</p>
+      <div class="lab-box">
+        <ul>
+          <li><strong>Deposit:</strong> Validating credit entries in <code>mbmBkmsnumber</code> accounts.</li>
+          <li><strong>Repayment:</strong> Testing interest-first vs. principal-first posting logic.</li>
+          <li><strong>Edge Case:</strong> Rejection of payments exceeding current loan payoffs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="scenario-title">Scenario: Notification Logic</span>
+      <h3>SMS Template & MongoDB Validation</h3>
+      <p>Verifying that the correct SMS templates are triggered based on transaction type.</p>
+      <div class="lab-box">
+        <strong>Audit Flow:</strong>
+        <p style="font-size: 0.85rem;">I query the <strong>MongoDB</strong> notification collection to verify the <code>template_id</code> matches the event.</p>
+        <code class="code-snippet">
+          db.notifications.find({<br>
+          &nbsp;&nbsp;user_id: "nooh",<br>
+          &nbsp;&nbsp;type: "LOAN_REPAYMENT"<br>
+          }).sort({created_at: -1})
+        </code>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="agile">
-  <h2 class="section-title">Agile & STLC Methodology</h2>
-  <p>I operate within a high-velocity Scrum environment, ensuring that quality is built into the product from the Sprint Planning phase.</p>
-  
-  <div class="agile-flow">
-    <div class="flow-step">
-      <h4>Sprint Planning</h4>
-      <p>Requirement analysis and effort estimation for QA tasks.</p>
-    </div>
-    <div class="flow-step">
-      <h4>Execution</h4>
-      <p>Functional, Sanity, and Regression testing cycles.</p>
-    </div>
-    <div class="flow-step">
-      <h4>Defect Mgmt</h4>
-      <p>Real-time bug tracking and developer collaboration in Jira.</p>
-    </div>
-    <div class="flow-step">
-      <h4>Retrospective</h4>
-      <p>Continuous process improvement for future sprints.</p>
-    </div>
-  </div>
-
-  <div class="grid" style="margin-top: 50px;">
-    <div class="card">
-      <h3>STLC Mastery</h3>
-      <ul>
-        <li><strong>Requirement Analysis:</strong> Identifying ambiguities in user stories.</li>
-        <li><strong>Test Planning:</strong> Developing data-driven test strategies.</li>
-        <li><strong>Traceability:</strong> Ensuring 100% coverage via RTM (Requirement Traceability Matrix).</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Defect Lifecycle</h3>
-      <p>I manage bugs from 'Open' to 'Closed' with rigorous Root Cause Analysis (RCA).</p>
-      <div class="artifact-preview">
-        [ID: TC_WO_001] Severity: Major<br>
-        Status: Failed<br>
-        Issue: Write-Off screen fields do not load on refresh.
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience" style="background: #0d1117;">
-  <h2 class="section-title">Professional Experience</h2>
-  
-  <div class="experience-block">
-    <span class="badge">Sept 2025 – Present</span>
-    <h3>MFSYS Technologies | QA Engineer</h3>
-    <p>Specializing in the validation of core banking modules and transaction integrity.</p>
-    <ul>
-      <li><strong>User Batch Management:</strong> Validating the opening/closing of financial batches with 100M SYP constraints.</li>
-      <li><strong>Aconnect Integration:</strong> Testing middleware APIs for Ciihive banking system integration.</li>
-      <li><strong>SQL Validation:</strong> Performing backend data verification for Account-to-GL transactions.</li>
-    </ul>
-  </div>
-
-  <div class="experience-block">
-    <span class="badge">June 2025 – Sept 2025</span>
-    <h3>Innovador Solutions | QA Engineer</h3>
-    <p>Managed end-to-end testing for diverse B2C and B2B digital platforms.</p>
-    <ul>
-      <li>Identified 400+ defects across multiple mobile and web applications.</li>
-      <li>Performed UI/UX and Cross-browser compatibility audits.</li>
-      <li>Executed exploratory testing on complex quiz and leaderboard logic.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Project Case Studies</h2>
+  <h2 class="section-title">Agile SDLC Framework</h2>
   <div class="grid">
     <div class="card">
-      <h3>Soul Whisper</h3>
-      <span class="tag">Mental Health Platform</span>
-      <p>Tested a sensitive therapy platform ensuring zero-leakage in user data and booking flows. Reported 200+ bugs across mobile and web.</p>
+      <h3>Sprint Grooming</h3>
+      <p>Translating business requirements for "Soul Whisper" and "GymKey" into actionable QA scenarios.</p>
     </div>
     <div class="card">
-      <h3>GymKey</h3>
-      <span class="tag">Fitness SaaS</span>
-      <p>Validated complex membership management and payment gateway integrations. Focused on UI consistency and navigation defects.</p>
-    </div>
-    <div class="card">
-      <h3>WWR (Worldwide Ranking)</h3>
-      <span class="tag">Gamification App</span>
-      <p>Analyzed leaderboard synchronization and quiz logic. Uncovered unrealistic logic errors in competitive ranking modules.</p>
+      <h3>Bug Governance</h3>
+      <p>Utilizing Jira for high-velocity defect tracking. Managed over 400+ issues including cross-browser layout shifts and broken payment flows.</p>
     </div>
   </div>
 </section>
 
-<section id="tech">
-  <h2 class="section-title">Technical Infrastructure</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>API Testing (Postman)</h3>
-      <p>Expertise in validating Ciihive Banking APIs including Token, CRM, and Deposit modules.</p>
-      <div class="artifact-preview">
-        GET /api/v1/transaction/status<br>
-        Expected: 200 OK<br>
-        Result: ERR_TRN_B_0017 (Detected)
-      </div>
-    </div>
-    <div class="card">
-      <h3>Data Engineering (SQL)</h3>
-      <p>Writing complex queries to validate that frontend transactions reflect accurately in the persistence layer.</p>
-    </div>
-    <div class="card">
-      <h3>Automation & Tools</h3>
-      <p>Proficient in Jira for defect tracking and management of the complete STLC.</p>
-    </div>
+<section id="experience" style="background: #080b0e;">
+  <h2 class="section-title">Experience Timeline</h2>
+  <div class="card" style="margin-bottom: 20px;">
+    <h4>MFSYS Technologies | Sept 2025 – Present</h4>
+    <p>Testing Ciihive Banking APIs and User Batch Management modules. Specialist in 100M SYP transaction constraints and Write-Off reversals.</p>
+  </div>
+  <div class="card">
+    <h4>Innovador Solutions | June 2025 – Sept 2025</h4>
+    <p>Manual and Exploratory testing for WWR (Worldwide Ranking) and Soul Whisper platforms. Focused on leaderboard synchronization and mobile UX.</p>
   </div>
 </section>
 
-<section id="contact" style="text-align: center;">
-  <h2 class="section-title" style="justify-content: center;">Connect With Me</h2>
-  <p>I am available for on-site projects in Islamabad or remote global consulting.</p>
-  <div class="card" style="max-width: 500px; margin: auto;">
-    <p>📧 <strong>sydmuhammadnooh@gmail.com</strong></p>
-    <p>📞 <strong>03349 9567625</strong></p>
-    <a href="https://www.linkedin.com/in/muhammad-nooh-1a570b387" target="_blank" class="btn">LinkedIn Profile</a>
+<section id="portal">
+  <div class="portal-section">
+    <h2 style="color: var(--primary-glow); font-size: 2.5rem; margin-bottom: 10px;">Full Project Documentation</h2>
+    <p style="color: var(--text-muted); max-width: 600px; margin: auto;">Detailed Test Plans, RTMs, and API Collection Exports are hosted on my professional artifact repository.</p>
+    <a href="#" target="_blank" class="external-btn">Access Master Work Repository</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Muhammad Nooh | Software Quality Engineering</p>
-  <p style="font-size: 0.8rem; color: #555;">KUST - Bachelors in Software Engineering</p>
+  <p>© 2026 MUHAMMAD NOOH | Lead QA Engineer</p>
+  <p style="font-size: 0.8rem; color: #444;">Islamabad, Pakistan | sydmuhammadnooh@gmail.com</p>
 </footer>
 
 </body>
