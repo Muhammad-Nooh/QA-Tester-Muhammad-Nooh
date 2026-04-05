@@ -1,72 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Work Repository | Muhammad Nooh</title>
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #f4f7f9; color: #334e68; margin: 0; padding: 40px; }
-    .container { max-width: 1000px; margin: auto; background: white; padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .back { text-decoration: none; color: #102a43; font-weight: 700; font-size: 0.9rem; }
-    h1 { color: #102a43; border-bottom: 3px solid #bcccdc; padding-bottom: 15px; margin-top: 30px; }
-    
-    .section-block { margin-top: 40px; }
-    .section-block h2 { color: #243b53; font-size: 1.2rem; text-transform: uppercase; background: #f0f4f8; padding: 10px; border-radius: 4px; }
-    
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
-    th { text-align: left; background: #f0f4f8; padding: 12px; border: 1px solid #d9e2ec; }
-    td { padding: 12px; border: 1px solid #d9e2ec; vertical-align: top; }
-    
-    .code { font-family: monospace; background: #f0f4f8; padding: 3px 6px; border-radius: 3px; color: #d32f2f; }
-    .tag { font-weight: bold; color: #102a43; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Test Repository | Muhammad Nooh</title>
+    <style>
+        /* WINTER CHILL THEME VARIABLES */
+        :root {
+            --glacier-white: #f8fafc;
+            --frost-blue: #e0f2fe;
+            --arctic-ice: #bae6fd;
+            --deep-ocean: #0c4a6e;
+            --storm-gray: #334155;
+            --accent-blue: #0077be;
+            --pass-green: #059669;
+            --fail-red: #dc2626;
+            --border-color: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--frost-blue);
+            color: var(--storm-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 40px auto;
+            background: var(--glacier-white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--arctic-ice);
+        }
+
+        /* NAVIGATION & HEADER */
+        .header-section {
+            border-bottom: 4px solid var(--accent-blue);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .back-nav {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .back-nav:hover {
+            color: var(--deep-ocean);
+            transform: translateX(-5px);
+        }
+
+        h1 { color: var(--deep-ocean); font-size: 2.8rem; margin: 0; }
+        h2 { color: var(--accent-blue); margin-top: 50px; border-left: 6px solid var(--accent-blue); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        h3 { color: var(--deep-ocean); margin-top: 30px; font-style: italic; }
+
+        /* TABLES STYLING */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        th {
+            background-color: var(--deep-ocean);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) { background-color: var(--frost-blue); }
+        tr:hover { background-color: #f1f5f9; }
+
+        /* STATUS BADGES */
+        .status { font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-size: 0.75rem; }
+        .pass { background: #dcfce7; color: var(--pass-green); }
+        .fail { background: #fee2e2; color: var(--fail-red); }
+        .high { color: var(--fail-red); font-weight: bold; }
+        
+        .code-snippet {
+            font-family: 'Consolas', monospace;
+            background: #1e293b;
+            color: #7dd3fc;
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        /* SECTION DIVIDERS */
+        .module-intro {
+            background: var(--frost-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--storm-gray);
+            font-size: 0.8rem;
+            padding-bottom: 20px;
+        }
+
+        /* DATA DUMP CLASSES FOR VOLUME */
+        .detailed-list { list-style: none; padding: 0; }
+        .detailed-list li { padding: 10px 0; border-bottom: 1px dashed var(--border-color); }
+
+    </style>
 </head>
 <body>
+
 <div class="container">
-  <a href="index.html" class="back">← RETURN TO MAIN PROFILE</a>
-  <h1>Documentation & Technical Repository</h1>
+    <a href="index.html" class="back-nav">← TERMINAL: RETURN_TO_HOME</a>
+    
+    <div class="header-section">
+        <h1>Master QA Documentation Repository</h1>
+        <p><strong>Engineer:</strong> Muhammad Nooh | <strong>Classification:</strong> Internal Technical Audit</p>
+    </div>
 
-  <div class="section-block">
-    <h2>1. Core Banking & Transactions (Functional)</h2>
-    <table>
-      <tr><th>ID</th><th>Scenario</th><th>Professional Logic</th></tr>
-      <tr><td>BNK-01</td><td>Atomic Deposits</td><td>Ensuring full rollback if DB connection drops during a credit entry.</td></tr>
-      <tr><td>BNK-02</td><td>Loan Write-Off</td><td>Validation that account status updates to 'Closed' and ledger balances to zero.</td></tr>
-      <tr><td>BNK-03</td><td>SYP Threshold</td><td>Testing batch opening logic precisely at 100,000,000.00 SYP limits.</td></tr>
-      <tr><td>BNK-04</td><td>Interest Reversal</td><td>Verifying restoration of accrual state after a voided transaction.</td></tr>
-      <tr><td>BNK-05</td><td>Joint Account</td><td>Validation of dual-signature requirements for high-value withdrawals.</td></tr>
-    </table>
-  </div>
+    <section>
+        <h2>Module 01: User Batch Management (Operations)</h2>
+        <div class="module-intro">
+            Focus: Validating the lifecycle of financial batches, including opening limits (100M SYP), multi-level approvals, and state persistence.
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test ID</th>
+                        <th>Scenario Description</th>
+                        <th>Test Steps / Inputs</th>
+                        <th>Expected Result</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>UBM_OB_001</td><td>Verify Max Batch Limit</td><td>Navigate to Operation > Open Batch. Enter 100,000,000.00 SYP.</td><td>Batch opens successfully with generated ID.</td><td>Critical</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_OB_002</td><td>Duplicate Active Batch</td><td>Attempt to open a batch while one is already 'Active'.</td><td>Error: ERR_TRN_B_0010 (User batch already open).</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_OB_003</td><td>UI Format Load</td><td>Refresh browser on 'Open Batch' screen.</td><td>UI elements and labels load correctly.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_OB_004</td><td>Alphabetical Input</td><td>Enter letters in the 'Amount' field.</td><td>Field should reject non-numeric characters.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_OB_005</td><td>Zero Amount Validation</td><td>Enter 0.00 in Batch Amount.</td><td>System should prevent zero-value batch creation.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_CBA_001</td><td>Approve Batch (Standard)</td><td>Navigate to Approval > Select Batch > Approve.</td><td>Status updates to 'Approved'.</td><td>Critical</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_CBA_002</td><td>Reject Batch Flow</td><td>Navigate to Approval > Select Batch > Reject.</td><td>Status updates to 'Rejected'.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_CBA_003</td><td>Close Rejected Batch</td><td>View Rejected Batch > Click 'Close'.</td><td>Workflow ID Closed Successfully.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_CBA_004</td><td>Refresh Sync Error</td><td>Click 'Refresh' on Approval list.</td><td>Screen should not go blank (UI Stability).</td><td>Medium</td><td><span class="status fail">Fail</span></td></tr>
+                    <tr><td>UBM_SEC_001</td><td>Unauthorized Approval</td><td>Login as User without Approval Rights.</td><td>Approval buttons should be disabled or hidden.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_SEC_002</td><td>SQL Injection Test</td><td>Input: <code>' OR 1=1--</code> into Search field.</td><td>Sanitized input, no data leak.</td><td>Critical</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_SEC_003</td><td>Cross-Site Scripting</td><td>Input: <code>&lt;script&gt;alert(1)&lt;/script&gt;</code></td><td>Script is escaped and displayed as plain text.</td><td>Critical</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_DAT_001</td><td>Post-Approval SQL Check</td><td>Verify Batch Table via SQL Query.</td><td>Flag 'isActive' = 1, 'isApproved' = 1.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_DAT_002</td><td>Timestamp Accuracy</td><td>Compare UI Open Time vs DB Server Time.</td><td>Time difference < 1 second.</td><td>Low</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_UI_001</td><td>Responsive Viewport</td><td>Resize window to 768px (Tablet).</td><td>Grid stacks correctly without horizontal scroll.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>UBM_UI_002</td><td>Dark Mode Toggle</td><td>Enable System Dark Theme.</td><td>All labels remain legible against background.</td><td>Low</td><td><span class="status pass">Pass</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-  <div class="section-block">
-    <h2>2. Authentication & Security</h2>
-    <table>
-      <tr><th>ID</th><th>Scenario</th><th>Professional Logic</th></tr>
-      <tr><td>SEC-01</td><td>Brute Force</td><td>Locking user profile after 5 failed attempts in under 2 minutes.</td></tr>
-      <tr><td>SEC-02</td><td>SQL Injection</td><td>Testing sanitization on login inputs: <span class="code">' OR 1=1 --</span></td></tr>
-      <tr><td>SEC-03</td><td>Session Expiry</td><td>Automatic termination of auth token after 15 minutes of idle time.</td></tr>
-      <tr><td>SEC-04</td><td>MFA Logic</td><td>Ensuring OTP request triggers for logins from unrecognized Hardware IDs.</td></tr>
-    </table>
-  </div>
+    <section>
+        <h2>Module 02: Loan Advanced Operations (Write-Off)</h2>
+        <div class="module-intro">
+            Validating the closure of non-performing loans. Ensuring all financial accruals are waived and account statuses are updated in the core ledger.
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test ID</th>
+                        <th>Test Scenario</th>
+                        <th>Test Data (Account ID)</th>
+                        <th>Actual Result</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>TC_WO_001</td><td>Screen Refresh Load</td><td>N/A</td><td>Shows No Format (Major Bug Detected)</td><td class="high">Major</td><td><span class="status fail">Fail</span></td></tr>
+                    <tr><td>TC_WO_002</td><td>Clear Button Function</td><td>0000000017565</td><td>Fields cleared successfully.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_003</td><td>Add Button Enabling</td><td>0000000017565</td><td>Input fields enabled for data entry.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_004</td><td>Save with Null Data</td><td>Empty String</td><td>'Invalid Input' error message displayed.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_005</td><td>Fetch Non-Existent Acc</td><td>9999999999999</td><td>'No Record Found' alert.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_011</td><td>Schedule Immutability</td><td>0000000016791</td><td>User cannot manually edit Value Date.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_013</td><td>Fetched Data Lock</td><td>0000000016791</td><td>Fetched account details remain read-only.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_014</td><td>Successful Write-Off</td><td>0000000017565</td><td>Account Closed; Status updated in Core.</td><td>Critical</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_015</td><td>Pending Charges Block</td><td>0000000016791</td><td>Error: 'Waive off pending charges first'.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_016</td><td>Currency Conversion</td><td>0000000018822</td><td>Converted SYP to Base Currency accurately.</td><td>High</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_WO_017</td><td>Audit Log Entry</td><td>0000000017565</td><td>Log 'WRITE_OFF_EVENT' present in SysAudit.</td><td>Medium</td><td><span class="status pass">Pass</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-  <div class="section-block">
-    <h2>3. Database & API (Backend)</h2>
-    <table>
-      <tr><th>ID</th><th>Scenario</th><th>Backend Audit</th></tr>
-      <tr><td>DAT-01</td><td>MongoDB SMS</td><td>Verifying <span class="code">template_id</span> matches transaction event type.</td></tr>
-      <tr><td>DAT-02</td><td>SQL Reconciliation</td><td>Auditing <span class="code">mbmBkmsnumber</span> balance via direct SQL query.</td></tr>
-      <tr><td>DAT-03</td><td>API Response</td><td>Validating JSON status codes (200 OK vs 403 Forbidden) for frozen accounts.</td></tr>
-    </table>
-  </div>
+    <section>
+        <h2>Module 03: Aconnect Banking APIs (Postman Integration)</h2>
+        <div class="module-intro">
+            Detailed API testing of request/response cycles. Validating status codes (200, 400, 500) and JSON schema integrity.
+        </div>
+        <div class="code-snippet">
+            // Sample Validation Script for Account to GL
+            pm.test("Status code is 200", function () {
+                pm.response.to.have.status(200);
+            });
+            pm.test("Response contains AccountNumber", function () {
+                var jsonData = pm.response.json();
+                pm.expect(jsonData.mbmBkmsnumber).to.not.be.null;
+            });
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>API Endpoint</th>
+                        <th>Description / Constraint</th>
+                        <th>Expected JSON Response</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>TC_API_01</td><td>/auth/login</td><td>Validate JWT generation.</td><td>{"token": "eyJhb...", "expires": 3600}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_02</td><td>/trans/acc-to-gl</td><td>Sufficient Balance (137k).</td><td>{"status": "SUCCESS", "tx_id": "8821"}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_03</td><td>/trans/acc-to-gl</td><td>Insufficient Balance (0.00).</td><td>{"error": "ERR_FUNDS_01", "code": 500}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_04</td><td>/trans/frozen</td><td>Debit attempt on Frozen Account.</td><td>{"error": "ACC_LOCKED", "code": 403}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_05</td><td>/trans/frozen-cr</td><td>Credit only on Frozen Account.</td><td>{"status": "SUCCESS", "msg": "Credit Posted"}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_26</td><td>/ciihive/cancel</td><td>Link: 112595 (Same Day).</td><td>{"msg": "Transaction Cancelled"}</td><td><span class="status pass">Pass</span></td></tr>
+                    <tr><td>TC_API_30</td><td>/auth/duplicate</td><td>Double-approval prevention.</td><td>{"error": "ERR_TRN_B_0017", "code": 409}</td><td><span class="status pass">Pass</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-  <div class="section-block">
-    <h2>4. Advanced High-Impact Scenarios</h2>
-    <ul>
-      <li><strong>Late Fee Accuracy:</strong> Validating that late fees trigger exactly 1 second after the grace period ends.</li>
-      <li><strong>Batch Recovery:</strong> Simulating a crash during a "Close Batch" operation to ensure no orphaned records.</li>
-      <li><strong>Schema Stability:</strong> Checking app reliability after MongoDB optional field updates.</li>
-      <li><strong>UI Stress:</strong> Rendering 5,000 rows of transaction history on low-memory mobile devices.</li>
-    </ul>
-  </div>
+    <section>
+        <h2>Module 04: Messaging Architecture (SMS & MongoDB)</h2>
+        <div class="module-intro">
+            Validating that transaction triggers result in correct SMS templates being stored in MongoDB and dispatched to gateways.
+        </div>
+        <h3>Database Schema Validation: Notification Collection</h3>
+        <ul class="detailed-list">
+            <li><strong>Template Mapping:</strong> Verify <code>template_id: "LOAN_REPAY"</code> triggers for Loan Repayment events.</li>
+            <li><strong>Data Integrity:</strong> Verify <code>mobile_number</code> follows E.164 format in MongoDB.</li>
+            <li><strong>Status Logic:</strong> Verify transition from <code>status: "PENDING"</code> to <code>status: "SENT"</code>.</li>
+            <li><strong>PII Security:</strong> Ensure <code>body</code> content does not contain unmasked PAN or account numbers.</li>
+        </ul>
+        <div class="code-snippet">
+            // Complex MongoDB Query for Audit
+            db.notifications.aggregate([
+                { $match: { "status": "SENT", "user": "nooh" } },
+                { $group: { _id: "$template_id", count: { $sum: 1 } } }
+            ]);
+        </div>
+    </section>
+
+    <section>
+        <h2>Module 05: SaaS Platforms (Exploratory & Manual)</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Module Tested</th>
+                        <th>Bug Description</th>
+                        <th>Root Cause Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Soul Whisper</td><td>Payment Gateway</td><td>Double charge on 'Back' button.</td><td>Inadequate idempotency keys in API.</td></tr>
+                    <tr><td>Soul Whisper</td><td>Consultation</td><td>Video call lag on iOS Chrome.</td><td>WebRTC signaling latency.</td></tr>
+                    <tr><td>GymKey</td><td>Membership</td><td>Grace period incorrectly calculated.</td><td>Timezone offset discrepancy (UTC vs Local).</td></tr>
+                    <tr><td>WWR App</td><td>Leaderboard</td><td>Inconsistent rankings after sync.</td><td>Race condition in NoSQL updates.</td></tr>
+                    <tr><td>WWR App</td><td>Quiz Logic</td><td>Negative scores allowed.</td><td>Missing frontend input validation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Comprehensive Bug Log (Sample 400+ Defects)</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bug ID</th>
+                        <th>Summary</th>
+                        <th>Severity</th>
+                        <th>Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>BUG-101</td><td>Dashboard chart overlapping on 13-inch MacBooks.</td><td>Low</td><td>Production</td></tr>
+                    <tr><td>BUG-102</td><td>Broken link in footer redirecting to 404 page.</td><td>Medium</td><td>Staging</td></tr>
+                    <tr><td>BUG-103</td><td>Search results returning deleted user profiles.</td><td>High</td><td>Dev</td></tr>
+                    <tr><td>BUG-104</td><td>Incorrect currency symbol (GBP instead of SYP).</td><td>Critical</td><td>Production</td></tr>
+                    <tr><td>BUG-105</td><td>Password reset email delay (> 5 mins).</td><td>Medium</td><td>Staging</td></tr>
+                    <tr><td>BUG-106</td><td>Mobile App: Logout button non-responsive on Android 12.</td><td>High</td><td>Mobile-QA</td></tr>
+                    <tr><td>BUG-400</td><td>Final session token not invalidated after inactivity.</td><td>Critical</td><td>Staging</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Audit Conclusion</h2>
+        <div class="module-intro">
+            All modules listed have been subjected to rigorous STLC phases. Total Test Cases Executed: 1,200+. Total Bugs Reported: 412. Total Resolved: 380.
+        </div>
+    </section>
+
+    <footer>
+        <p>INTERNAL DOCUMENT - PROPERTY OF MUHAMMAD NOOH QA REPOSITORY</p>
+        <p>Winter Edition V2.1 | Powered by Professional Integrity</p>
+    </footer>
 </div>
+
 </body>
 </html>
