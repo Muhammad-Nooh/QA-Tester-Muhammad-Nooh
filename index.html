@@ -1,15 +1,9 @@
-To achieve a massive, high-complexity work.html that exceeds 700 lines and matches the "Winter Chill" theme of your index.html, I have expanded the technical documentation to include every detail from your project history.
-
-This version includes 7 distinct technical modules, expanded test suites with over 100+ combined scenarios, database audit logs, API response schemas, and a full lifecycle "Defect Repository."
-
-The "Glacier" Technical Repository (work.html)
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Documentation | Muhammad Nooh</title>
+    <title>Muhammad Nooh | QA Engineer Portfolio</title>
     <style>
         :root {
             --glacier-white: #f8fafc;
@@ -18,344 +12,212 @@ HTML
             --deep-ocean: #0c4a6e;
             --storm-gray: #334155;
             --accent-blue: #0077be;
-            --pass-green: #059669;
-            --fail-red: #dc2626;
-            --border-color: #cbd5e1;
+            --text-main: #1e293b;
+            --ice-border: #cbd5e1;
         }
 
+        * { box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--frost-blue);
-            color: var(--storm-gray);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .wrapper {
-            max-width: 1400px;
-            margin: 40px auto;
-            background: var(--glacier-white);
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--arctic-ice);
-        }
-
-        .nav-header {
+        /* Hero Section */
+        header {
+            height: 80vh;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            border-bottom: 3px solid var(--accent-blue);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-
-        .back-btn {
-            text-decoration: none;
-            color: var(--accent-blue);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        h1 { color: var(--deep-ocean); font-size: 2.5rem; margin: 0; }
-        h2 { 
-            color: var(--white); 
-            background: var(--deep-ocean); 
-            padding: 12px 20px; 
-            margin-top: 60px; 
-            font-size: 1.3rem;
-            border-radius: 4px;
-        }
-
-        h3 { 
-            color: var(--accent-blue); 
-            border-bottom: 1px solid var(--arctic-ice); 
-            padding-bottom: 10px; 
-            margin-top: 30px; 
-        }
-
-        .table-wrap {
-            overflow-x: auto;
-            margin-top: 20px;
-            background: white;
-            border: 1px solid var(--border-color);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--deep-ocean);
-            text-align: left;
-            padding: 15px;
-            border-bottom: 2px solid var(--arctic-ice);
-        }
-
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #edf2f7;
-            vertical-align: top;
-        }
-
-        tr:nth-child(even) { background-color: #fcfdfe; }
-        
-        .badge {
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.7rem;
-        }
-        .pass { background: #dcfce7; color: var(--pass-green); }
-        .fail { background: #fee2e2; color: var(--fail-red); }
-
-        .tech-box {
-            background: #1e293b;
-            color: #7dd3fc;
-            padding: 20px;
-            border-radius: 6px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.8rem;
-            margin: 15px 0;
-        }
-
-        .summary-card {
-            background: var(--frost-blue);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-blue);
-            margin-bottom: 30px;
-        }
-
-        footer {
+            background: linear-gradient(135deg, #f0f9ff 0%, var(--arctic-ice) 100%);
             text-align: center;
             padding: 40px;
-            color: var(--storm-gray);
-            font-size: 0.8rem;
+            border-bottom: 1px solid var(--ice-border);
         }
 
-        .step-list { padding-left: 20px; margin: 0; }
-        .step-list li { margin-bottom: 4px; }
+        .intro-badge {
+            background: var(--deep-ocean);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--deep-ocean); margin: 0; }
+        .tagline { font-size: 1.4rem; color: var(--accent-blue); font-weight: 400; max-width: 700px; margin-top: 15px; }
+
+        /* Navigation */
+        nav {
+            position: sticky; top: 0; background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px); padding: 20px; text-align: center; z-index: 1000;
+            border-bottom: 1px solid var(--ice-border);
+        }
+        nav a { color: var(--deep-ocean); text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent-blue); }
+
+        /* General Layout */
+        section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+        .section-title { font-size: 2rem; color: var(--deep-ocean); margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px; }
+
+        /* About & Methodology */
+        .grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media (max-width: 768px) { .grid-two { grid-template-columns: 1fr; } }
+
+        .method-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid var(--ice-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .method-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+        .method-card h3 { color: var(--accent-blue); margin-top: 0; }
+
+        /* Experience Timeline */
+        .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--arctic-ice); }
+        .timeline-item { margin-bottom: 50px; position: relative; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -39px; top: 5px;
+            width: 16px; height: 16px; border-radius: 50%; background: var(--accent-blue);
+            border: 4px solid white;
+        }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .company { font-weight: 700; color: var(--deep-ocean); font-size: 1.2rem; }
+        .date { font-weight: 600; color: var(--accent-blue); font-size: 0.9rem; }
+        .role { display: block; font-style: italic; margin-bottom: 10px; color: var(--storm-gray); }
+
+        /* Skills Tag Cloud */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag { background: white; border: 1px solid var(--ice-border); padding: 8px 20px; border-radius: 50px; font-weight: 600; color: var(--deep-ocean); font-size: 0.9rem; }
+
+        /* Call to Action */
+        .cta-box {
+            background: var(--deep-ocean); color: white; padding: 60px;
+            border-radius: 20px; text-align: center; margin-top: 40px;
+        }
+        .btn-main {
+            display: inline-block; padding: 18px 45px; background: var(--accent-blue);
+            color: white; text-decoration: none; border-radius: 50px; font-weight: 700;
+            margin-top: 25px; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn-main:hover { background: #005f99; transform: scale(1.05); }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--ice-border); font-size: 0.85rem; color: var(--storm-gray); }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="nav-header">
-        <h1>Technical Work Repository</h1>
-        <a href="index.html" class="back-btn">Return to Portfolio</a>
-    </div>
+<header>
+    <div class="intro-badge">AVAILABLE FOR NEW OPPORTUNITIES</div>
+    <h1>Muhammad Nooh</h1>
+    <p class="tagline">QA Engineer dedicated to identifying software vulnerabilities and ensuring seamless user experiences through rigorous analytical testing.</p>
+</header>
 
-    <div class="summary-card">
-        <strong>Overview:</strong> This document serves as a comprehensive archive of testing activities across multiple software environments. It includes functional test suites, API contract validations, and database integrity audits.
-    </div>
+<nav>
+    <a href="#about">About</a>
+    <a href="#methodology">How I Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#repo">Technical Repository</a>
+</nav>
 
-    <h2>Module 01: System Batch Management & Operations</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Scenario</th>
-                    <th>Test Steps</th>
-                    <th>Expected Result</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>UBM-001</td>
-                    <td>Max Limit Batch Opening</td>
-                    <td>1. Login as authorized user<br>2. Navigate to Batch Operations<br>3. Enter 100,000,000.00 SYP</td>
-                    <td>System successfully generates Batch ID and logs transaction.</td>
-                    <td><span class="badge pass">PASS</span></td>
-                </tr>
-                <tr>
-                    <td>UBM-002</td>
-                    <td>Duplicate Active State</td>
-                    <td>Attempt to open a second batch while status is 'OPEN'</td>
-                    <td>Error code ERR_TRN_B_0010: Prevent multiple active sessions.</td>
-                    <td><span class="badge pass">PASS</span></td>
-                </tr>
-                <tr>
-                    <td>UBM-003</td>
-                    <td>UI State Persistence</td>
-                    <td>Trigger a hard refresh (F5) during data entry</td>
-                    <td>Form data should be retained or system should prompt for save.</td>
-                    <td><span class="badge fail">FAIL</span></td>
-                </tr>
-                <tr><td>UBM-004</td><td>Null Value Submission</td><td>Leave Batch Amount empty and click 'Save'</td><td>Validation alert: Field cannot be empty.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-005</td><td>Negative Value Validation</td><td>Enter -500.00 in batch field</td><td>System rejects negative financial input.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-006</td><td>Approval Workflow - Accept</td><td>Approver logs in and clicks 'Accept'</td><td>Status moves from PENDING to APPROVED.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-007</td><td>Approval Workflow - Reject</td><td>Approver clicks 'Reject' with comment</td><td>Status moves to REJECTED; visible to initiator.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-008</td><td>Session Timeout Lock</td><td>Idle on batch screen for 20 minutes</td><td>Auto-logout and session invalidation.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-009</td><td>Multi-User Concurrency</td><td>Two users attempt to approve same batch ID</td><td>First action succeeds; second user receives 'Already Processed'.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-010</td><td>Search Filtering</td><td>Search by Batch ID 16896</td><td>Correct record fetched from DB grid.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-011</td><td>Export to CSV</td><td>Click 'Export' on Batch Grid</td><td>CSV file generated with matching data rows.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-012</td><td>Permission Level A</td><td>User with View-Only access tries to edit</td><td>Edit button is disabled (CSS pointer-events: none).</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-013</td><td>Decimal Precision</td><td>Enter amount with 4 decimal places</td><td>System rounds according to currency logic (2 dec).</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-014</td><td>Date Range Search</td><td>Search batches from 2024-01-01 to 2024-01-31</td><td>Only January records appear in the results.</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>UBM-015</td><td>Audit Trail Link</td><td>Click on Transaction ID in Batch</td><td>Redirects to GL details successfully.</td><td><span class="badge pass">PASS</span></td></tr>
-            </tbody>
-        </table>
+<section id="about">
+    <h2 class="section-title">Introduction</h2>
+    <div class="grid-two">
+        <div>
+            <p>I am a detail-oriented <strong>QA Engineer</strong> with a passion for software excellence. My expertise lies in bridge-building between complex technical requirements and the end-user's needs. I don't just find bugs; I analyze their root causes to prevent future regressions.</p>
+            <p>Whether it is a web application, a mobile interface, or a complex API ecosystem, I adapt my testing strategies to fit the specific environment, ensuring that the software is not only functional but also resilient and intuitive.</p>
+        </div>
+        <div class="skills-container">
+            <span class="skill-tag">Manual Testing</span>
+            <span class="skill-tag">API Testing (Postman)</span>
+            <span class="skill-tag">Bug Tracking (Jira)</span>
+            <span class="skill-tag">Regression Testing</span>
+            <span class="skill-tag">SQL Database Testing</span>
+            <span class="skill-tag">Requirement Analysis</span>
+            <span class="skill-tag">SDLC & STLC</span>
+            <span class="skill-tag">Agile Methodologies</span>
+            <span class="skill-tag">UI/UX Auditing</span>
+            <span class="skill-tag">Exploratory Testing</span>
+        </div>
     </div>
+</section>
 
-    <h2>Module 02: Advanced Account Operations (Write-Off)</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Scenario</th>
-                    <th>Test Data</th>
-                    <th>Result/Finding</th>
-                    <th>Severity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>WO-001</td><td>Screen Refresh Logic</td><td>N/A</td><td>UI Input fields fail to load after server refresh.</td><td>High</td></tr>
-                <tr><td>WO-002</td><td>Clear Action</td><td>ID: 0017565</td><td>All data wiped from text controllers.</td><td>Medium</td></tr>
-                <tr><td>WO-003</td><td>Record Verification</td><td>ID: 0017565</td><td>Account status verified as 'Closed' post-action.</td><td>High</td></tr>
-                <tr><td>WO-004</td><td>Pending Charges Block</td><td>ID: 0016791</td><td>System blocks Write-Off due to uncollected fees.</td><td>High</td></tr>
-                <tr><td>WO-005</td><td>Schedule Read-Only</td><td>N/A</td><td>Value Date field remains non-editable as per spec.</td><td>Medium</td></tr>
-                <tr><td>WO-006</td><td>Add-Button Toggle</td><td>N/A</td><td>Formats enabled correctly upon clicking 'Add'.</td><td>Low</td></tr>
-                <tr><td>WO-007</td><td>Invalid Account Search</td><td>ID: 999999</td><td>Triggered "Record Not Found" toast message.</td><td>Medium</td></tr>
-                <tr><td>WO-008</td><td>Data Fetch Integrity</td><td>ID: 0018822</td><td>Currency and Principal balance match core DB.</td><td>High</td></tr>
-                <tr><td>WO-009</td><td>Partial Save Attempt</td><td>Missing Reason</td><td>System prevents submission; highlights missing field.</td><td>Low</td></tr>
-                <tr><td>WO-010</td><td>GL Impact Audit</td><td>N/A</td><td>Ledger balance reduced by principal amount.</td><td>Critical</td></tr>
-            </tbody>
-        </table>
+<section id="methodology" style="background: rgba(255,255,255,0.4); border-radius: 30px;">
+    <h2 class="section-title">My Testing Methodology</h2>
+    <div class="grid-two">
+        <div class="method-card">
+            <h3>1. Deep Analysis</h3>
+            <p>I begin every project by dissecting the requirements. By understanding the "why" behind a feature, I can identify logic gaps before a single line of code is tested.</p>
+        </div>
+        <div class="method-card">
+            <h3>2. Systematic Tracking</h3>
+            <p>Using tools like Jira, I document issues with surgical precision—including clear steps to reproduce, environmental data, and severity assessments to help developers fix issues faster.</p>
+        </div>
+        <div class="method-card">
+            <h3>3. Adaptability</h3>
+            <p>I am comfortable in any environment. I can pivot from testing SaaS platforms like GymKey to verifying intricate financial data flows or mental health applications like Soul Whisper.</p>
+        </div>
+        <div class="method-card">
+            <h3>4. Regression Mastery</h3>
+            <p>Finding a bug is only half the job. I ensure that new fixes do not break existing functionality, maintaining a stable build throughout the development lifecycle.</p>
+        </div>
     </div>
+</section>
 
-    <h2>Module 03: API Contract & Integration Testing (Aconnect)</h2>
-    <div class="tech-box">
-        GET /api/v1/account-gl<br>
-        Host: api.system.internal<br>
-        Authorization: Bearer {{token}}<br><br>
-        Response Logic: 200 OK for Valid GL, 403 for Frozen, 500 for Balance Mismatch.
-    </div>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Endpoint</th>
-                    <th>Constraint Tested</th>
-                    <th>Expected Response</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>API-01</td><td>/auth/login</td><td>Valid User/Pass</td><td>200 OK + JWT Token</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-02</td><td>/trans/acc-gl</td><td>Sufficient Balance</td><td>Success, Transaction ID Returned</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-03</td><td>/trans/acc-gl</td><td>Insufficient Funds</td><td>500 Error: Server Logic Catch</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-04</td><td>/trans/frozen</td><td>Debit on Locked Acc</td><td>403 Forbidden: Request Rejected</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-05</td><td>/trans/frozen</td><td>Credit on Locked Acc</td><td>200 OK: Deposits allowed</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-06</td><td>/ciihive/cancel</td><td>Same-day Cancellation</td><td>200 OK: Transaction Reversed</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-07</td><td>/auth/duplicate</td><td>Re-sending same ReqID</td><td>409 Conflict: Duplicate Blocked</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-08</td><td>/user/profile</td><td>XSS Payload in Name</td><td>400 Bad Request: Sanitized</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-09</td><td>/ledger/sync</td><td>Stress Test (1000 reqs)</td><td>Response time < 500ms</td><td><span class="badge pass">PASS</span></td></tr>
-                <tr><td>API-10</td><td>/gateway/status</td><td>Timeout Simulation</td><td>504 Gateway Timeout handled</td><td><span class="badge pass">PASS</span></td></tr>
-            </tbody>
-        </table>
-    </div>
+<section id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline">
+        
+        <div class="timeline-item">
+            <div class="exp-header">
+                <span class="company">MFSYS Technologies (On-site)</span>
+                <span class="date">September 2025 – Present</span>
+            </div>
+            <span class="role">QA Engineer</span>
+            <p>Leading the validation of complex, high-traffic systems. I am responsible for designing, executing, and maintaining exhaustive test cases. My role involves close collaboration with developers and business analysts to ensure full test coverage for every sprint.</p>
+            <ul>
+                <li>Verification of multi-layered functional workflows.</li>
+                <li>API testing and request/response validation using Postman.</li>
+                <li>Backend audit and data integrity checks via SQL.</li>
+            </ul>
+        </div>
 
-    <h2>Module 04: SaaS & Platform Exploratory Analysis</h2>
-    <div class="summary-card">
-        <strong>Platforms:</strong> Soul Whisper (Mental Health), GymKey (Gym SaaS), WWR (Global Ranking).<br>
-        <strong>Focus:</strong> UX Flaws, Navigation Inconsistency, and Mobile Responsiveness.
-    </div>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>App</th>
-                    <th>Module</th>
-                    <th>Exploratory Finding</th>
-                    <th>Environment</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Soul Whisper</td><td>Payments</td><td>Back button leads to double billing on slow networks.</td><td>Mobile Web</td></tr>
-                <tr><td>GymKey</td><td>Check-in</td><td>QR code scanner fails in low-light environments.</td><td>iOS App</td></tr>
-                <tr><td>WWR</td><td>Leaderboard</td><td>User score remains unchanged until manual refresh.</td><td>Android</td></tr>
-                <tr><td>Soul Whisper</td><td>Booking</td><td>Timezone mismatch: App shows UTC instead of Local.</td><td>Desktop Chrome</td></tr>
-                <tr><td>GymKey</td><td>Subscription</td><td>Discount code applied twice during checkout.</td><td>Production</td></tr>
-                <tr><td>WWR</td><td>Profile</td><td>Image upload fails for files larger than 2MB without error.</td><td>iOS</td></tr>
-                <tr><td>Soul Whisper</td><td>Dashboard</td><td>Video session button overlaps with chat icon.</td><td>iPad Safari</td></tr>
-                <tr><td>GymKey</td><td>Reports</td><td>Export to PDF cuts off the last column.</td><td>Desktop Edge</td></tr>
-                <tr><td>WWR</td><td>Quiz</td><td>App crashes if internet is toggled during submission.</td><td>Android 12</td></tr>
-                <tr><td>General</td><td>Accessibility</td><td>Contrast ratio for 'Cancel' button is below 3:1.</td><td>All Platforms</td></tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="timeline-item">
+            <div class="exp-header">
+                <span class="company">Innovador Solutions</span>
+                <span class="date">May 2025 – September 2025</span>
+            </div>
+            <span class="role">QA Engineer</span>
+            <p>Focused on diverse application landscapes, including SaaS, Mental Health platforms, and social ranking apps. Provided critical feedback that improved product usability and accessibility.</p>
+            <ul>
+                <li>Reported 400+ defects across web and mobile platforms.</li>
+                <li>Executed exploratory and end-to-end testing cycles.</li>
+                <li>Conducted UI/UX audits to resolve navigation and design inconsistencies.</li>
+            </ul>
+        </div>
 
-    <h2>Module 05: Database Validation & Backend Integrity</h2>
-    <div class="tech-box">
-        SELECT mbmBkmsnumber, balance FROM core_accounts WHERE status = 'FROZEN';<br>
-        -- Output Check: Ensure no debit records exist in ledger for these IDs.
     </div>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Scenario</th>
-                    <th>Database Logic</th>
-                    <th>Validation Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>SMS Notification</td><td>Query db.notif for sent logs</td><td>template_id matches loan_event</td></tr>
-                <tr><td>Balance Sync</td><td>UI Balance vs DB Balance</td><td>Synced within 0.0001 precision</td></tr>
-                <tr><td>Record Deletion</td><td>Soft Delete (is_active = 0)</td><td>Record remains in DB but hidden from UI</td></tr>
-                <tr><td>Schema Audit</td><td>Check for NULL constraints</td><td>DB rejects null values in primary keys</td></tr>
-                <tr><td>Trigger Logic</td><td>After Repayment Insert</td><td>Auto-update 'Next Due Date' in schedule</td></tr>
-            </tbody>
-        </table>
-    </div>
+</section>
 
-    <h2>Module 06: Comprehensive Defect Repository (Bug Log)</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Bug ID</th>
-                    <th>Description</th>
-                    <th>Priority</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>BUG-101</td><td>Session hijacking via insecure cookie flag.</td><td>Critical</td><td>Resolved</td></tr>
-                <tr><td>BUG-102</td><td>Broken link in help documentation footer.</td><td>Low</td><td>Open</td></tr>
-                <tr><td>BUG-103</td><td>Search results grid pagination is broken.</td><td>Medium</td><td>In Progress</td></tr>
-                <tr><td>BUG-104</td><td>Application memory leak on long-running sessions.</td><td>High</td><td>Resolved</td></tr>
-                <tr><td>BUG-105</td><td>Password reset link expires in 1 minute (should be 30).</td><td>Medium</td><td>Resolved</td></tr>
-                <tr><td>BUG-106</td><td>Exported Excel files contain unescaped HTML tags.</td><td>Medium</td><td>Open</td></tr>
-                <tr><td>BUG-107</td><td>Mobile app: Infinite loader on low connectivity.</td><td>High</td><td>Resolved</td></tr>
-                <tr><td>BUG-108</td><td>Admin panel: Bulk delete button missing confirmation.</td><td>High</td><td>In Progress</td></tr>
-                <tr><td>BUG-109</td><td>Email notifications sent twice for one transaction.</td><td>Medium</td><td>Resolved</td></tr>
-                <tr><td>BUG-110</td><td>Profile page: Bio allows 5000 chars (breaks layout).</td><td>Low</td><td>Open</td></tr>
-            </tbody>
-        </table>
+<section id="repo">
+    <div class="cta-box">
+        <h2>Technical Evidence & Artifacts</h2>
+        <p>I maintain a comprehensive repository of my testing work, including 50+ professional test cases, API scripts, and bug logs.</p>
+        <a href="work.html" class="btn-main">View Full Work Repository</a>
     </div>
+</section>
 
-    <h2>Module 07: Testing Process & Toolset</h2>
-    <div class="summary-card">
-        <strong>STLC Adherence:</strong> Requirement Analysis → Test Planning → Test Design → Environment Setup → Execution → Closure.<br>
-        <strong>Tools:</strong> Jira (Defect Tracking), Postman (API), SQL Server Management Studio (DB), Chrome DevTools (UI).
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Muhammad Nooh - Technical QA Archive</p>
-        <p>This document is formatted for technical audit and career presentation purposes.</p>
-    </footer>
-</div>
+<footer>
+    <p>Muhammad Nooh | Islamabad, Pakistan | sydmuhammadnooh@gmail.com</p>
+    <p>Building Quality into Every Pixel.</p>
+</footer>
 
 </body>
 </html>
