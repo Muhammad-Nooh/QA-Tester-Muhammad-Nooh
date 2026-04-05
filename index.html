@@ -6,58 +6,62 @@
   <title>Muhammad Nooh | QA Engineer Portfolio</title>
   <style>
     :root {
-      --bg-color: #FAF9F6;
-      --secondary-bg: #F5F5DC;
-      --accent-color: #8B7E66;
-      --text-main: #333333;
-      --text-light: #666666;
-      --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      --bg-color: #0b0f13;
+      --card-bg: #161b22;
+      --accent-color: #2ea043;
+      --text-main: #e6edf3;
+      --text-dim: #8b949e;
+      --border-color: #30363d;
     }
 
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-main);
-      line-height: 1.8;
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--secondary-bg);
-      padding: 80px 20px;
+      background: linear-gradient(180deg, #0d1117 0%, var(--bg-color) 100%);
+      padding: 100px 20px;
       text-align: center;
-      border-bottom: 1px solid #E2E2E2;
+      border-bottom: 1px solid var(--border-color);
     }
 
     h1 {
       margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 2px;
-      color: var(--accent-color);
-      text-transform: uppercase;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -1px;
     }
 
     .subtitle {
-      font-style: italic;
-      color: var(--text-light);
-      font-size: 1.1rem;
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 10px;
     }
 
     nav {
       position: sticky;
       top: 0;
-      background: rgba(250, 249, 246, 0.95);
-      padding: 15px;
+      background: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(12px);
+      padding: 20px;
       text-align: center;
       z-index: 1000;
-      border-bottom: 1px solid #EEE;
+      border-bottom: 1px solid var(--border-color);
     }
 
     nav a {
-      color: var(--text-main);
+      color: var(--text-dim);
       margin: 0 20px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
       letter-spacing: 1px;
       transition: 0.3s;
     }
@@ -67,71 +71,119 @@
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
-      font-size: 1.6rem;
-      text-align: center;
+      font-size: 1.8rem;
       margin-bottom: 40px;
-      color: var(--accent-color);
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    h2::after {
+      content: "";
+      height: 1px;
+      flex-grow: 1;
+      background: var(--border-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 4px;
-      margin-bottom: 30px;
-      box-shadow: var(--card-shadow);
-      border-left: 3px solid var(--secondary-bg);
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
     }
 
     .tag {
-      background: var(--secondary-bg);
-      padding: 2px 12px;
-      font-size: 0.75rem;
+      color: var(--accent-color);
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 20px;
+      letter-spacing: 2px;
       margin-bottom: 10px;
-      display: inline-block;
+      display: block;
+    }
+
+    h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.4rem;
     }
 
     ul {
-      list-style-type: square;
-      padding-left: 20px;
+      list-style: none;
+      padding: 0;
+      color: var(--text-dim);
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
     }
 
     .highlight-box {
-      background-color: var(--secondary-bg);
-      padding: 30px;
-      border-radius: 8px;
-      font-family: sans-serif;
+      background: linear-gradient(145deg, #161b22 0%, #0d1117 100%);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-color);
     }
 
     footer {
       text-align: center;
-      padding: 40px;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      background: #FDFDFD;
+      padding: 60px;
+      background: #0d1117;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-dim);
     }
 
-    a {
-      color: var(--accent-color);
-      text-decoration: underline;
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 20px;
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
+      h1 { font-size: 2.2rem; }
       nav { display: none; }
     }
   </style>
@@ -140,29 +192,29 @@
 
 <header>
   <h1>Muhammad Nooh</h1>
-  <p class="subtitle">QA Engineer | Specialist in Financial Systems & API Integrity</p>
-  <p style="font-size: 0.9rem;">Islamabad, Pakistan [cite: 2] | 03349 9567625 [cite: 2]</p>
+  <p class="subtitle">QA Engineer | Financial Systems Specialist</p>
+  <p style="color: var(--text-dim); font-size: 0.9rem;">Islamabad, Pakistan [cite: 2] | 03349 9567625 [cite: 2]</p>
 </header>
 
 <nav>
-  <a href="#approach">Approach</a>
-  <a href="#api">API & DB</a>
+  <a href="#methodology">Methodology</a>
+  <a href="#api">API & Database</a>
   <a href="#experience">Experience</a>
-  <a href="#banking">Banking Projects</a>
+  <a href="#banking">Banking Logic</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="approach">
+<section id="methodology">
   <h2>Testing Methodology</h2>
-  <div class="card">
-    <div class="tag">Process</div>
+  <div class="card" style="border-left: 4px solid var(--accent-color);">
+    <span class="tag">Strategy</span>
     <p>
-      I follow a disciplined STLC (Software Testing Life Cycle) [cite: 7] approach. My methodology focuses on identifying defects early in the sprint through requirement analysis [cite: 18] and comprehensive test case design[cite: 6, 15]. I specialize in:
+      I apply a high-precision approach to the Software Testing Life Cycle (STLC)[cite: 7, 9]. My methodology is designed to secure financial products by identifying architectural flaws early in the development cycle[cite: 7, 18].
     </p>
     <ul>
-      <li>Manual & Functional Testing: Ensuring web and mobile platforms meet strict business requirements[cite: 14, 23].</li>
-      <li>Regression & Smoke Testing: Validating that new deployments do not compromise existing stability[cite: 14, 21, 23].</li>
-      <li>UAT Coordination: Leading User Acceptance Testing to ensure product-quality before release[cite: 21].</li>
+      <li>Functional & Regression Testing: Ensuring web and mobile stability[cite: 14, 23].</li>
+      <li>Smoke & Sanity Testing: High-speed validation before deployment[cite: 21].</li>
+      <li>UAT Coordination: Finalizing product readiness for the end-user[cite: 21].</li>
     </ul>
   </div>
 </section>
@@ -171,73 +223,74 @@
   <h2>API & Database Analysis</h2>
   <div class="grid">
     <div class="card">
-      <div class="tag">Postman</div>
-      <h3>API Validation</h3>
-      <p>Using Postman [cite: 6], I ensure backend reliability for systems like the Ciihive Banking API[cite: 61, 63]:</p>
+      <span class="tag">Postman</span>
+      <h3>API Integrity</h3>
+      <p>Verifying the backend backbone of financial systems like the Ciihive Banking API[cite: 6, 61, 63]:</p>
       <ul>
-        <li>Validating request and response structures, status codes, and data integrity[cite: 64].</li>
-        <li>Testing Token, CRM, Deposit, Loan, and Transaction endpoints[cite: 63].</li>
-        <li>Identifying API-level defects to improve overall backend reliability[cite: 66].</li>
+        <li>Validating status codes, JSON structures, and data integrity[cite: 17, 64].</li>
+        <li>Testing Token, CRM, and Transaction endpoints[cite: 63].</li>
+        <li>Analyzing API-level defects to ensure secure data flow[cite: 65, 66].</li>
       </ul>
     </div>
 
     <div class="card">
-      <div class="tag">SQL & Data</div>
-      <h3>Database Integrity</h3>
-      <p>I utilize SQL queries to validate that the frontend reflects the true state of the database[cite: 9, 17, 25]:</p>
+      <span class="tag">SQL / Mongo</span>
+      <h3>Data Validation</h3>
+      <p>Using SQL to ensure that what the user sees matches the financial ledger[cite: 9, 17, 25]:</p>
       <ul>
-        <li>Verifying transaction records and ensuring secure data flow across financial modules[cite: 65].</li>
-        <li>Analyzing root causes of bugs by inspecting data persistence[cite: 22].</li>
-        <li>Validating request/response data against backend records[cite: 17].</li>
+        <li>Cross-referencing frontend actions with backend database records[cite: 17, 25].</li>
+        <li>Inspecting transaction histories and data persistence for accuracy[cite: 17].</li>
+        <li>Root cause analysis for bugs impacting data consistency[cite: 22].</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section id="banking">
-  <h2>Banking & Integration Expertise</h2>
+  <h2>Financial Integration Logic</h2>
   <div class="highlight-box">
-    <h3>Integrated Financial Workflows</h3>
-    <p>At MFSYS Technologies [cite: 13], I manage end-to-end testing for complex financial systems[cite: 14]:</p>
+    <h3>Banking Module Expertise</h3>
+    <p>At MFSYS Technologies, I manage testing for complex, multi-module banking flows[cite: 13, 14, 15]:</p>
     <ul>
-      <li>Customer Lifecycle: Testing CRM modules, including customer creation and authorization[cite: 63].</li>
-      <li>Account Provisioning: Validating workflows for Deposit, Loan, and TDR account modules[cite: 63].</li>
-      <li>Transaction Engine: Ensuring accurate data flow and integrity for financial transactions[cite: 63, 65].</li>
-      <li>Reversals & Cancellations: Validating that reversed transactions correctly update system states and data records.</li>
+      <li><strong>Customer Lifecycle:</strong> Complete validation of CRM onboarding and approvals[cite: 63].</li>
+      <li><strong>Financial Accounts:</strong> Testing logic for Deposit, Loan, and TDR account modules[cite: 63].</li>
+      <li><strong>Transaction Engine:</strong> Ensuring 100% accuracy in authorization and posting flows[cite: 63].</li>
+      <li><strong>Reversals:</strong> Validating system state recovery after cancelled or reversed transactions.</li>
     </ul>
   </div>
 </section>
 
 <section id="experience">
-  <h2>Professional Experience</h2>
-  <div class="card">
-    <p><strong>QA Engineer | MFSYS Technologies (On-site)</strong><br>
-    <small>September 2025 - Present [cite: 13]</small></p>
-    <ul>
-      <li>Perform manual, functional, and regression testing on web and mobile financial systems[cite: 14].</li>
-      <li>Utilize Jira for bug tracking, defect reporting, and test cycle management[cite: 16].</li>
-      <li>Design and execute test cases, scenarios, and test data for multiple modules[cite: 15].</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <p><strong>QA Engineer | Innovador Solutions (Remote)</strong><br>
-    <small>June 2025 - Present [cite: 23]</small></p>
-    <ul>
-      <li>Managed end-to-end manual testing for GymKey, Soul Whisper, and WWR projects[cite: 42, 49, 55].</li>
-      <li>Reported 400+ defects across mobile and web platforms[cite: 46, 52].</li>
-      <li>Improved system usability by identifying UI/UX and accessibility issues[cite: 47, 54].</li>
-    </ul>
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Present</span>
+      <h3>MFSYS Technologies</h3>
+      <p><strong>QA Engineer (On-site)</strong> [cite: 13]</p>
+      <p style="font-size: 0.9rem; color: var(--text-dim);">Sept 2025 – Present [cite: 13]</p>
+      <ul>
+        <li>Manual, functional, and regression testing on financial systems[cite: 14].</li>
+        <li>Bug tracking and defect reporting using Jira[cite: 16].</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag">Remote</span>
+      <h3>Innovador Solutions</h3>
+      <p><strong>QA Engineer</strong> [cite: 23]</p>
+      <p style="font-size: 0.9rem; color: var(--text-dim);">June 2025 – Present [cite: 23]</p>
+      <ul>
+        <li>E2E testing for GymKey, Soul Whisper, and WWR projects[cite: 41, 48, 55].</li>
+        <li>Reported 400+ defects across diverse platforms[cite: 46, 52].</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" style="text-align: center;">
   <h2>Contact</h2>
-  <div class="card" style="text-align: center;">
-    <p>Based in Islamabad, Pakistan [cite: 2]</p>
-    <p>📧 <a href="mailto:sydmuhammadnooh@gmail.com">sydmuhammadnooh@gmail.com [cite: 2]</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/muhammad-nooh-1a570b387" target="_blank">LinkedIn Profile [cite: 2]</a></p>
-  </div>
+  <p>Available for on-site opportunities in Islamabad or remote global projects.</p>
+  <p>📧 sydmuhammadnooh@gmail.com [cite: 2]</p>
+  <a href="https://www.linkedin.com/in/muhammad-nooh-1a570b387" target="_blank" class="contact-btn">LinkedIn Profile</a>
 </section>
 
 <footer>
