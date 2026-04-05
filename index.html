@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Nooh | Senior QA Engineering Hub</title>
+  <title>Muhammad Nooh | Senior QA Engineer</title>
   <style>
     :root {
       --bg-dark: #05070a;
@@ -11,311 +11,69 @@
       --bg-card: #161b22;
       --primary-glow: #2ea043;
       --primary-dim: #1d6129;
-      --accent-gold: #d29922;
       --text-bright: #ffffff;
       --text-muted: #8b949e;
       --border-glow: rgba(46, 160, 67, 0.3);
     }
-
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Inter', -apple-system, system-ui, sans-serif;
-      margin: 0;
-      background-color: var(--bg-dark);
-      color: var(--text-bright);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at 50% 50%, #111d13 0%, var(--bg-dark) 80%);
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      margin: 0;
-      letter-spacing: -3px;
-      background: linear-gradient(to bottom, #fff 40%, var(--primary-glow));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 20px rgba(46, 160, 67, 0.4));
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(13, 17, 23, 0.9);
-      backdrop-filter: blur(15px);
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 20px;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-glow);
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: 0.3s;
-    }
-
+    body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-bright); scroll-behavior: smooth; }
+    header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at 50% 50%, #111d13 0%, var(--bg-dark) 80%); text-align: center; padding: 20px; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: -3px; background: linear-gradient(to bottom, #fff 40%, var(--primary-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(46, 160, 67, 0.4)); }
+    nav { position: sticky; top: 0; background: rgba(13, 17, 23, 0.9); backdrop-filter: blur(15px); display: flex; justify-content: center; gap: 25px; padding: 20px; z-index: 1000; border-bottom: 1px solid var(--border-glow); }
+    nav a { color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
     nav a:hover { color: var(--primary-glow); }
-
     section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: var(--primary-glow);
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .section-title::after {
-      content: "";
-      height: 1px;
-      background: linear-gradient(90deg, var(--primary-glow), transparent);
-      flex-grow: 1;
-    }
-
+    .section-title { font-size: 2rem; margin-bottom: 40px; color: var(--primary-glow); display: flex; align-items: center; gap: 20px; text-transform: uppercase; }
+    .section-title::after { content: ""; height: 1px; background: linear-gradient(90deg, var(--primary-glow), transparent); flex-grow: 1; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glow);
-      border-radius: 12px;
-      padding: 30px;
-      transition: 0.3s ease;
-    }
-
+    .card { background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 12px; padding: 30px; transition: 0.3s ease; }
     .card:hover { transform: translateY(-5px); border-color: var(--primary-glow); }
-
-    .lab-box {
-      background: #05070a;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 15px;
-      border-left: 4px solid var(--accent-gold);
-    }
-
-    .scenario-label {
-      color: var(--accent-gold);
-      font-size: 0.7rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    ul { padding-left: 20px; margin: 0; font-size: 0.9rem; color: var(--text-muted); }
-    li { margin-bottom: 8px; }
-    li strong { color: var(--text-bright); }
-
-    .code-snippet {
-      font-family: 'Fira Code', monospace;
-      color: #7ee787;
-      font-size: 0.8rem;
-      background: #000;
-      padding: 10px;
-      border-radius: 4px;
-      display: block;
-      margin-top: 10px;
-    }
-
-    .portal-banner {
-      background: linear-gradient(145deg, #111d13 0%, #05070a 100%);
-      text-align: center;
-      border-radius: 20px;
-      padding: 60px 40px;
-      border: 1px solid var(--primary-glow);
-    }
-
-    .btn-main {
-      display: inline-block;
-      padding: 15px 40px;
-      background: var(--primary-glow);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 800;
-      margin-top: 20px;
-    }
-
+    .portal-banner { background: linear-gradient(145deg, #111d13 0%, #05070a 100%); text-align: center; border-radius: 20px; padding: 60px 40px; border: 1px solid var(--primary-glow); }
+    .btn-main { display: inline-block; padding: 15px 40px; background: var(--primary-glow); color: white; text-decoration: none; border-radius: 8px; font-weight: 800; margin-top: 20px; transition: 0.3s; }
+    .btn-main:hover { box-shadow: 0 0 20px var(--primary-glow); transform: scale(1.05); }
     footer { padding: 60px; text-align: center; border-top: 1px solid var(--border-glow); color: var(--text-muted); }
   </style>
 </head>
 <body>
-
 <header>
   <h1>MUHAMMAD NOOH</h1>
-  <p style="color: var(--text-muted);">Lead QA Engineer | Banking Infrastructure & API Specialist</p>
+  <p style="color: var(--text-muted); font-size: 1.2rem;">Lead QA Engineer | Banking Infrastructure Specialist</p>
 </header>
-
 <nav>
-  <a href="#lab">Interactive Lab</a>
-  <a href="#custom">Custom Scenarios</a>
-  <a href="#experience">Experience</a>
-  <a href="#portal">Full Work Repository</a>
+  <a href="#about">Philosophy</a>
+  <a href="#experience">History</a>
+  <a href="#portal">Work Repository</a>
 </nav>
-
-<section id="lab">
-  <h2 class="section-title">Interactive Testing Lab</h2>
-  <div class="grid">
-    
-    <div class="card">
-      <span class="scenario-label">10-Point Login Suite</span>
-      <h3>Authentication Security</h3>
-      <div class="lab-box">
-        <ul>
-          <li><strong>Brute Force:</strong> Account lockout after 5 failed attempts.</li>
-          <li><strong>SQL Injection:</strong> Payload rejection in username fields.</li>
-          <li><strong>Session Fixation:</strong> Token refresh upon successful login.</li>
-          <li><strong>MFA Trigger:</strong> OTP request for unrecognized IP devices.</li>
-          <li><strong>Idle Timeout:</strong> Auto-logout after 15 mins of inactivity.</li>
-          <li><strong>Masking:</strong> Password characters hidden during entry.</li>
-          <li><strong>Concurrency:</strong> Handling dual logins on same user account.</li>
-          <li><strong>Case Sensitivity:</strong> verifying password sensitivity logic.</li>
-          <li><strong>Browser Back:</strong> Ensuring no access to secure areas post-logout.</li>
-          <li><strong>Encryption:</strong> Verifying HTTPS/TLS for credential transit.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="scenario-label">10-Point Transaction Suite</span>
-      <h3>Deposit & Loan Repayments</h3>
-      <div class="lab-box">
-        <ul>
-          <li><strong>Atomicity:</strong> Rollback if DB write fails during deposit.</li>
-          <li><strong>Principal Split:</strong> Accurate split in loan repayment logic.</li>
-          <li><strong>Overpayment:</strong> Rejection of payments > current payoff.</li>
-          <li><strong>Frozen Accounts:</strong> Blocking debits on restricted status.</li>
-          <li><strong>Backdating:</strong> Logic check for past-dated value transactions.</li>
-          <li><strong>Ledger Match:</strong> <code>mbmBkmsnumber</code> balance = UI balance.</li>
-          <li><strong>Concurrency:</strong> Handling simultaneous credit/debit requests.</li>
-          <li><strong>Rounding:</strong> Testing precision for 4+ decimal currency fields.</li>
-          <li><strong>Audit Trail:</strong> Verification of transaction ID in GL logs.</li>
-          <li><strong>Thresholds:</strong> Rejection of transfers exceeding daily limits.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="scenario-label">10-Point Integration Suite</span>
-      <h3>SMS & MongoDB Validation</h3>
-      <div class="lab-box">
-        <ul>
-          <li><strong>Template Mapping:</strong> Correct ID triggered for "LOAN_DUE".</li>
-          <li><strong>Placeholder Check:</strong> Replacing {name} with actual DB values.</li>
-          <li><strong>Persistence:</strong> Record exists in <code>db.notifications</code>.</li>
-          <li><strong>Delivery Status:</strong> Status updates to 'Sent' in MongoDB.</li>
-          <li><strong>Language:</strong> Template triggers in user's preferred locale.</li>
-          <li><strong>Retry Logic:</strong> System behavior on SMS gateway timeout.</li>
-          <li><strong>Privacy:</strong> No sensitive PII (Full Acc No) in SMS body.</li>
-          <li><strong>Throughput:</strong> Monitoring DB write latency under high load.</li>
-          <li><strong>TTL:</strong> Verifying MongoDB Time-To-Live index for old logs.</li>
-          <li><strong>Formatting:</strong> Ensuring special characters don't break JSON.</li>
-        </ul>
-        <code class="code-snippet">
-          db.sms_logs.find({type: "DEPOSIT_SUCCESS"})
-        </code>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="custom">
-  <h2 class="section-title">Designed High-Impact Scenarios</h2>
+<section id="about">
+  <h2 class="section-title">Testing Philosophy</h2>
   <div class="grid">
     <div class="card">
-      <h3>1. Negative Logic: Interest Reversal</h3>
-      <p>Verifying that reversing a transaction correctly restores the interest accrual state without affecting subsequent payments.</p>
+      <h3>Shift-Left Testing</h3>
+      <p>I identify logic flaws during the requirement phase, reducing technical debt before development begins.</p>
     </div>
     <div class="card">
-      <h3>2. The "Race Condition" Test</h3>
-      <p>Simulating two simultaneous API calls for a single loan payoff to ensure only one transaction completes.</p>
-    </div>
-    <div class="card">
-      <h3>3. Cross-Module Integrity</h3>
-      <p>Verifying that a change in "Customer CRM" status (e.g., Deceased) automatically freezes linked Deposit accounts.</p>
-    </div>
-    <div class="card">
-      <h3>4. Boundary: 100M SYP Threshold</h3>
-      <p>Testing batch opening logic precisely at the maximum system limit to ensure no buffer overflow or logic crashes.</p>
-    </div>
-    <div class="card">
-      <h3>5. UI Responsiveness: Data Tables</h3>
-      <p>Testing 1000+ transaction rows on mobile viewport to ensure vertical/horizontal scrolling doesn't break the UI.</p>
-    </div>
-    <div class="card">
-      <h3>6. API Payload Tampering</h3>
-      <p>Using Postman to intercept a repayment request and changing the <code>amount</code> to a negative value to test server-side rejection.</p>
-    </div>
-    <div class="card">
-      <h3>7. Late Fee Grace Period</h3>
-      <p>Validating that the system does not apply a late fee if payment is received exactly 1 second before the grace period ends.</p>
-    </div>
-    <div class="card">
-      <h3>8. Multi-Currency Ledgering</h3>
-      <p>Verifying exchange rate conversion accuracy when a loan in USD is repaid via a local SYP currency account.</p>
-    </div>
-    <div class="card">
-      <h3>9. Recovery: Batch Timeout</h3>
-      <p>Simulating a network failure during a "Close Batch" operation to ensure the system doesn't leave the batch in a 'Locked' state.</p>
-    </div>
-    <div class="card">
-      <h3>10. Database Schema Evolution</h3>
-      <p>Testing application stability after a MongoDB schema update where optional fields are missing in legacy records.</p>
+      <h3>Financial Integrity</h3>
+      <p>Specializing in atomic transactions, ledger reconciliation, and API security for banking systems.</p>
     </div>
   </div>
 </section>
-
-<section id="experience" style="background: #080b0e;">
-  <h2 class="section-title">Experience</h2>
+<section id="experience">
+  <h2 class="section-title">Professional Path</h2>
   <div class="card" style="margin-bottom: 20px;">
-    <h4>MFSYS Technologies | Sept 2025 – Present</h4>
-    <ul>
-      <li>Specializing in Batch Management and Ciihive Banking APIs.</li>
-      <li>Verifying Write-Off logic and transaction reversals via SQL.</li>
-    </ul>
+    <h4>MFSYS Technologies | 2025 – Present</h4>
+    <p>QA Engineer focused on Batch Management and Ciihive Banking APIs.</p>
   </div>
   <div class="card">
-    <h4>Innovador Solutions | June 2025 – Sept 2025</h4>
-    <ul>
-      <li>Manual testing for Soul Whisper (Mental Health) and GymKey platforms.</li>
-      <li>Reported 400+ bugs across mobile and web interfaces.</li>
-    </ul>
+    <h4>Innovador Solutions | 2025</h4>
+    <p>Reported 400+ defects for GymKey and Soul Whisper platforms.</p>
   </div>
 </section>
-
 <section id="portal">
   <div class="portal-banner">
     <h2>Full Work Artifacts</h2>
-    <p style="color: var(--text-muted);">RTMs, Test Plans, and full Postman Collections are documented in my secondary repository.</p>
-    <a href="#" target="_blank" class="btn-main">Visit Documentation Portal</a>
+    <p style="color: var(--text-muted);">View 40+ specific test cases for Banking, Login, and Database validation.</p>
+    <a href="work.html" class="btn-main">Open Work Repository</a>
   </div>
 </section>
-
-<footer>
-  <p>© 2026 MUHAMMAD NOOH | Lead QA Engineer</p>
-  <p style="font-size: 0.8rem; margin-top: 10px;">Bachelors in Software Engineering - Kohat University of Science and Technology</p>
-</footer>
-
+<footer><p>© 2026 MUHAMMAD NOOH</p></footer>
 </body>
 </html>
