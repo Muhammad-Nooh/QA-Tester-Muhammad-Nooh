@@ -3,107 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Nooh | Senior QA Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Muhammad Nooh | QA Engineer</title>
   <style>
     :root {
-      --navy-deep: #0a192f;
-      --navy-light: #112240;
-      --slate-text: #8892b0;
-      --white-text: #e6f1ff;
-      --accent-blue: #64ffda; /* Professional subtle teal */
-      --soft-border: #233554;
+      --arctic-blue: #e0f2f1;
+      --frost-blue: #0077be;
+      --deep-glacier: #0a192f;
+      --snow-white: #ffffff;
+      --ice-border: #cbd5e1;
+      --text-main: #334155;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--navy-deep); color: var(--slate-text); margin: 0; line-height: 1.6; }
+    body { font-family: 'Inter', sans-serif; background: var(--arctic-blue); color: var(--text-main); margin: 0; line-height: 1.6; }
     
     header {
-      height: 70vh;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%);
+      background: linear-gradient(180deg, #b3e5fc 0%, var(--arctic-blue) 100%);
       text-align: center;
       padding: 20px;
+      border-bottom: 2px solid var(--snow-white);
     }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--white-text); margin: 0; letter-spacing: -1px; }
-    .subtitle { font-size: 1.2rem; color: var(--accent-blue); font-weight: 400; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--deep-glacier); margin: 0; letter-spacing: -1px; }
+    .title-tag { font-size: 1.2rem; color: var(--frost-blue); font-weight: 700; margin-top: 10px; text-transform: uppercase; letter-spacing: 3px; }
 
     nav {
-      position: sticky; top: 0; background: rgba(10, 25, 47, 0.95);
-      backdrop-filter: blur(10px); padding: 18px; text-align: center; z-index: 1000; border-bottom: 1px solid var(--soft-border);
+      position: sticky; top: 0; background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px); padding: 15px; text-align: center; z-index: 1000; border-bottom: 1px solid var(--ice-border);
     }
-    nav a { color: var(--white-text); text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; opacity: 0.7; }
-    nav a:hover { opacity: 1; color: var(--accent-blue); }
+    nav a { color: var(--deep-glacier); text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover { color: var(--frost-blue); }
 
-    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-    .section-title { font-size: 1.8rem; margin-bottom: 40px; color: var(--white-text); display: flex; align-items: center; gap: 15px; }
-    .section-title::after { content: ""; height: 1px; background: var(--soft-border); flex-grow: 1; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-    .card { background: var(--navy-light); border: 1px solid var(--soft-border); padding: 30px; border-radius: 4px; transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
-    .card h3 { color: var(--white-text); margin-top: 0; }
-
-    .btn-cta {
-      display: inline-block; padding: 16px 32px; border: 1px solid var(--accent-blue); color: var(--accent-blue);
-      text-decoration: none; border-radius: 4px; font-weight: 600; margin-top: 30px; transition: 0.3s;
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .card { background: var(--snow-white); border: 1px solid var(--ice-border); padding: 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    
+    .btn-winter {
+      display: inline-block; padding: 15px 35px; background: var(--frost-blue); color: white;
+      text-decoration: none; border-radius: 50px; font-weight: 700; margin-top: 20px; transition: 0.3s;
     }
-    .btn-cta:hover { background: rgba(100, 255, 218, 0.1); }
+    .btn-winter:hover { background: var(--deep-glacier); transform: translateY(-3px); }
 
-    footer { padding: 40px; text-align: center; font-size: 0.8rem; border-top: 1px solid var(--soft-border); }
+    footer { padding: 40px; text-align: center; background: var(--deep-glacier); color: var(--snow-white); font-size: 0.8rem; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Muhammad Nooh</h1>
-  <div class="subtitle">Senior QA Engineer</div>
-  <p style="max-width: 600px; margin-top: 20px;">Ensuring systemic integrity for high-stakes financial platforms and core banking infrastructure.</p>
+  <div class="title-tag">QA Engineer</div>
+  <p>Specializing in FinTech Validation & Banking API Integrity</p>
 </header>
 
 <nav>
-  <a href="#specialization">Specialization</a>
-  <a href="#experience">Experience</a>
-  <a href="#lab">Technical Repository</a>
+  <a href="#expertise">Competencies</a>
+  <a href="#experience">Professional History</a>
+  <a href="#repo">Documentation</a>
 </nav>
 
-<section id="specialization">
-  <h2 class="section-title">Technical Specialization</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Financial Logic</h3>
-      <p>Validation of Core Banking modules including User Batching, Loan Write-offs, and SYP currency constraints.</p>
-    </div>
-    <div class="card">
-      <h3>API Verification</h3>
-      <p>Extensive testing of Token, CRM, and Deposit APIs via Postman to ensure secure financial data transit.</p>
-    </div>
+<section id="expertise">
+  <div class="card">
+    <h3>Technical Focus</h3>
+    <p>Manual and API testing for high-traffic financial systems. Expertise in validating core banking operations, including <strong>User Batch Management</strong> and <strong>Loan Write-Offs</strong>.</p>
   </div>
 </section>
 
 <section id="experience">
-  <h2 class="section-title">Career History</h2>
-  <div class="card" style="margin-bottom: 20px;">
+  <div class="card">
     <h3>MFSYS Technologies</h3>
-    <p style="color: var(--accent-blue);">Senior QA Engineer | 2025 – Present</p>
-    <p>Managing the validation lifecycle for financial ecosystems, specializing in regression and functional audits.</p>
+    <p><strong>QA Engineer | 2025 – Present</strong></p>
+    <p>Executing functional, regression, and API testing on web and mobile financial systems. Ensuring request/response data integrity using Postman and SQL.</p>
   </div>
   <div class="card">
     <h3>Innovador Solutions</h3>
-    <p style="color: var(--accent-blue);">QA Engineer | 2025</p>
-    <p>Executed manual testing for diverse B2B/B2C platforms, delivering over 400 documented defect reports.</p>
+    <p><strong>QA Engineer | 2025</strong></p>
+    <p>Performed end-to-end testing for Soul Whisper (Mental Health) and GymKey (SaaS), reporting over 400+ defects during the development lifecycle.</p>
   </div>
 </section>
 
-<section id="lab" style="text-align: center;">
-  <h2 class="section-title" style="justify-content: center;">Professional Work Repository</h2>
-  <p>Detailed documentation of 50+ test cases across Core Banking, Security, and Backend validation.</p>
-  <a href="work.html" class="btn-cta">View Comprehensive Documentation</a>
+<section id="repo" style="text-align: center;">
+  <h2>Detailed Technical Archive</h2>
+  <p>Deep-dive into 50+ professional test cases, including edge cases for banking modules and API security.</p>
+  <a href="work.html" class="btn-winter">Open Work Repository</a>
 </section>
 
 <footer>
-  <p>Muhammad Nooh • Islamabad, Pakistan • sydmuhammadnooh@gmail.com</p>
+  <p>Muhammad Nooh • Islamabad • sydmuhammadnooh@gmail.com</p>
 </footer>
 
 </body>
