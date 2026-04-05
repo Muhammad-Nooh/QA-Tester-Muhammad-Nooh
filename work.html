@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Test Repository | Muhammad Nooh</title>
     <style>
-        /* WINTER CHILL THEME VARIABLES */
         :root {
             --glacier-white: #f8fafc;
             --frost-blue: #e0f2fe;
@@ -37,7 +36,6 @@
             border: 1px solid var(--arctic-ice);
         }
 
-        /* NAVIGATION & HEADER */
         .header-section {
             border-bottom: 4px solid var(--accent-blue);
             padding-bottom: 20px;
@@ -62,7 +60,6 @@
         h2 { color: var(--accent-blue); margin-top: 50px; border-left: 6px solid var(--accent-blue); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
         h3 { color: var(--deep-ocean); margin-top: 30px; font-style: italic; }
 
-        /* TABLES STYLING */
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
@@ -95,7 +92,6 @@
         tr:nth-child(even) { background-color: var(--frost-blue); }
         tr:hover { background-color: #f1f5f9; }
 
-        /* STATUS BADGES */
         .status { font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-size: 0.75rem; }
         .pass { background: #dcfce7; color: var(--pass-green); }
         .fail { background: #fee2e2; color: var(--fail-red); }
@@ -113,7 +109,6 @@
             overflow-x: auto;
         }
 
-        /* SECTION DIVIDERS */
         .module-intro {
             background: var(--frost-blue);
             padding: 20px;
@@ -130,16 +125,14 @@
             padding-bottom: 20px;
         }
 
-        /* DATA DUMP CLASSES FOR VOLUME */
         .detailed-list { list-style: none; padding: 0; }
         .detailed-list li { padding: 10px 0; border-bottom: 1px dashed var(--border-color); }
-
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="back-nav">← TERMINAL: RETURN_TO_HOME</a>
+    <a href="index.html" class="back-nav">← RETURN_TO_HOME</a>
     
     <div class="header-section">
         <h1>Master QA Documentation Repository</h1>
@@ -226,7 +219,6 @@
             Detailed API testing of request/response cycles. Validating status codes (200, 400, 500) and JSON schema integrity.
         </div>
         <div class="code-snippet">
-            // Sample Validation Script for Account to GL
             pm.test("Status code is 200", function () {
                 pm.response.to.have.status(200);
             });
@@ -272,7 +264,6 @@
             <li><strong>PII Security:</strong> Ensure <code>body</code> content does not contain unmasked PAN or account numbers.</li>
         </ul>
         <div class="code-snippet">
-            // Complex MongoDB Query for Audit
             db.notifications.aggregate([
                 { $match: { "status": "SENT", "user": "nooh" } },
                 { $group: { _id: "$template_id", count: { $sum: 1 } } }
@@ -304,7 +295,7 @@
     </section>
 
     <section>
-        <h2>Comprehensive Bug Log (Sample 400+ Defects)</h2>
+        <h2>Comprehensive Bug Log Summary</h2>
         <div class="table-container">
             <table>
                 <thead>
@@ -336,8 +327,7 @@
     </section>
 
     <footer>
-        <p>INTERNAL DOCUMENT - PROPERTY OF MUHAMMAD NOOH QA REPOSITORY</p>
-        <p>Winter Edition V2.1 | Powered by Professional Integrity</p>
+        <p>INTERNAL DOCUMENT - MUHAMMAD NOOH QA REPOSITORY</p>
     </footer>
 </div>
 
