@@ -1,12 +1,9 @@
-I have merged the high-contrast, professional gradient design with the interactive test laboratory and expanded project sections. This version creates a comprehensive, multi-layered "Master Hub" that showcases your specific technical workflows (Login, Deposits, Loan Repayments, and MongoDB SMS validation) alongside your career history.
-
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Nooh | Lead QA Engineering Hub</title>
+  <title>Muhammad Nooh | Senior QA Engineering Hub</title>
   <style>
     :root {
       --bg-dark: #05070a;
@@ -21,7 +18,6 @@ HTML
     }
 
     * { box-sizing: border-box; }
-
     body {
       font-family: 'Inter', -apple-system, system-ui, sans-serif;
       margin: 0;
@@ -32,7 +28,7 @@ HTML
     }
 
     header {
-      height: 100vh;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -50,13 +46,6 @@ HTML
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 20px rgba(46, 160, 67, 0.4));
-    }
-
-    .hero-sub {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 800px;
-      margin: 20px auto;
     }
 
     nav {
@@ -82,17 +71,13 @@ HTML
       transition: 0.3s;
     }
 
-    nav a:hover { color: var(--primary-glow); text-shadow: 0 0 10px var(--primary-glow); }
+    nav a:hover { color: var(--primary-glow); }
 
-    section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 
     .section-title {
       font-size: 2rem;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       color: var(--primary-glow);
       display: flex;
       align-items: center;
@@ -108,11 +93,7 @@ HTML
       flex-grow: 1;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 
     .card {
       background: var(--bg-card);
@@ -120,10 +101,9 @@ HTML
       border-radius: 12px;
       padding: 30px;
       transition: 0.3s ease;
-      position: relative;
     }
 
-    .card:hover { transform: translateY(-8px); border-color: var(--primary-glow); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+    .card:hover { transform: translateY(-5px); border-color: var(--primary-glow); }
 
     .lab-box {
       background: #05070a;
@@ -138,102 +118,59 @@ HTML
       font-size: 0.7rem;
       font-weight: bold;
       text-transform: uppercase;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       display: block;
     }
+
+    ul { padding-left: 20px; margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-bright); }
 
     .code-snippet {
       font-family: 'Fira Code', monospace;
       color: #7ee787;
-      font-size: 0.85rem;
-      display: block;
-      margin-top: 10px;
+      font-size: 0.8rem;
       background: #000;
       padding: 10px;
       border-radius: 4px;
-    }
-
-    .badge {
-      font-size: 0.65rem;
-      padding: 4px 10px;
-      background: rgba(46, 160, 67, 0.1);
-      color: var(--primary-glow);
-      border: 1px solid var(--primary-glow);
-      border-radius: 4px;
-      text-transform: uppercase;
-      margin-right: 5px;
+      display: block;
+      margin-top: 10px;
     }
 
     .portal-banner {
       background: linear-gradient(145deg, #111d13 0%, #05070a 100%);
       text-align: center;
       border-radius: 20px;
-      padding: 80px 40px;
+      padding: 60px 40px;
       border: 1px solid var(--primary-glow);
-      margin-top: 40px;
     }
 
     .btn-main {
       display: inline-block;
-      padding: 18px 45px;
+      padding: 15px 40px;
       background: var(--primary-glow);
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 800;
-      margin-top: 30px;
-      transition: 0.3s;
-      box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+      margin-top: 20px;
     }
 
-    .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(46, 160, 67, 0.5); }
-
-    .timeline-item {
-      padding-left: 30px;
-      border-left: 2px solid var(--primary-dim);
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -9px;
-      top: 5px;
-      width: 16px;
-      height: 16px;
-      background: var(--primary-glow);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--primary-glow);
-    }
-
-    footer {
-      padding: 80px 20px;
-      text-align: center;
-      border-top: 1px solid var(--border-glow);
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 768px) { nav { display: none; } h1 { font-size: 2.5rem; } }
+    footer { padding: 60px; text-align: center; border-top: 1px solid var(--border-glow); color: var(--text-muted); }
   </style>
 </head>
 <body>
 
 <header>
   <h1>MUHAMMAD NOOH</h1>
-  <p class="hero-sub">Senior QA Engineer specializing in high-stakes Banking Infrastructure, API Security, and Agile SDLC Governance.</p>
-  <div style="margin-top: 20px;">
-    <span class="badge">STLC Architecture</span>
-    <span class="badge">Postman</span>
-    <span class="badge">MongoDB/SQL</span>
-  </div>
+  <p style="color: var(--text-muted);">Lead QA Engineer | Banking Infrastructure & API Specialist</p>
 </header>
 
 <nav>
   <a href="#lab">Interactive Lab</a>
-  <a href="#agile">Agile Strategy</a>
-  <a href="#experience">History</a>
-  <a href="#portal">Work Repository</a>
+  <a href="#custom">Custom Scenarios</a>
+  <a href="#experience">Experience</a>
+  <a href="#portal">Full Work Repository</a>
 </nav>
 
 <section id="lab">
@@ -241,95 +178,142 @@ HTML
   <div class="grid">
     
     <div class="card">
-      <span class="scenario-label">Scenario: Identity & Access</span>
-      <h3>Login Page Validation</h3>
+      <span class="scenario-label">10-Point Login Suite</span>
+      <h3>Authentication Security</h3>
       <div class="lab-box">
         <ul>
-          <li><strong>Brute Force:</strong> Testing account lockout after 5 failed attempts.</li>
-          <li><strong>Session Integrity:</strong> Verifying token invalidation on logout.</li>
-          <li><strong>Security:</strong> Testing response to SQL injection payloads in credential fields.</li>
+          <li><strong>Brute Force:</strong> Account lockout after 5 failed attempts.</li>
+          <li><strong>SQL Injection:</strong> Payload rejection in username fields.</li>
+          <li><strong>Session Fixation:</strong> Token refresh upon successful login.</li>
+          <li><strong>MFA Trigger:</strong> OTP request for unrecognized IP devices.</li>
+          <li><strong>Idle Timeout:</strong> Auto-logout after 15 mins of inactivity.</li>
+          <li><strong>Masking:</strong> Password characters hidden during entry.</li>
+          <li><strong>Concurrency:</strong> Handling dual logins on same user account.</li>
+          <li><strong>Case Sensitivity:</strong> verifying password sensitivity logic.</li>
+          <li><strong>Browser Back:</strong> Ensuring no access to secure areas post-logout.</li>
+          <li><strong>Encryption:</strong> Verifying HTTPS/TLS for credential transit.</li>
         </ul>
       </div>
     </div>
 
     <div class="card">
-      <span class="scenario-label">Scenario: Core Banking Logic</span>
-      <h3>Deposits & Loan Repayments</h3>
+      <span class="scenario-label">10-Point Transaction Suite</span>
+      <h3>Deposit & Loan Repayments</h3>
       <div class="lab-box">
         <ul>
-          <li><strong>Deposits:</strong> Ensuring credit entries trigger real-time ledger updates in <code>mbmBkmsnumber</code>.</li>
-          <li><strong>Repayments:</strong> Validating principal vs. interest split accuracy.</li>
-          <li><strong>Validation:</strong> Rejection of payments exceeding total outstanding payoff.</li>
+          <li><strong>Atomicity:</strong> Rollback if DB write fails during deposit.</li>
+          <li><strong>Principal Split:</strong> Accurate split in loan repayment logic.</li>
+          <li><strong>Overpayment:</strong> Rejection of payments > current payoff.</li>
+          <li><strong>Frozen Accounts:</strong> Blocking debits on restricted status.</li>
+          <li><strong>Backdating:</strong> Logic check for past-dated value transactions.</li>
+          <li><strong>Ledger Match:</strong> <code>mbmBkmsnumber</code> balance = UI balance.</li>
+          <li><strong>Concurrency:</strong> Handling simultaneous credit/debit requests.</li>
+          <li><strong>Rounding:</strong> Testing precision for 4+ decimal currency fields.</li>
+          <li><strong>Audit Trail:</strong> Verification of transaction ID in GL logs.</li>
+          <li><strong>Thresholds:</strong> Rejection of transfers exceeding daily limits.</li>
         </ul>
       </div>
     </div>
 
     <div class="card">
-      <span class="scenario-label">Scenario: Message Orchestration</span>
-      <h3>SMS Templates & MongoDB</h3>
-      <p style="font-size: 0.9rem;">Verifying notification accuracy by auditing the persistence layer.</p>
+      <span class="scenario-label">10-Point Integration Suite</span>
+      <h3>SMS & MongoDB Validation</h3>
       <div class="lab-box">
+        <ul>
+          <li><strong>Template Mapping:</strong> Correct ID triggered for "LOAN_DUE".</li>
+          <li><strong>Placeholder Check:</strong> Replacing {name} with actual DB values.</li>
+          <li><strong>Persistence:</strong> Record exists in <code>db.notifications</code>.</li>
+          <li><strong>Delivery Status:</strong> Status updates to 'Sent' in MongoDB.</li>
+          <li><strong>Language:</strong> Template triggers in user's preferred locale.</li>
+          <li><strong>Retry Logic:</strong> System behavior on SMS gateway timeout.</li>
+          <li><strong>Privacy:</strong> No sensitive PII (Full Acc No) in SMS body.</li>
+          <li><strong>Throughput:</strong> Monitoring DB write latency under high load.</li>
+          <li><strong>TTL:</strong> Verifying MongoDB Time-To-Live index for old logs.</li>
+          <li><strong>Formatting:</strong> Ensuring special characters don't break JSON.</li>
+        </ul>
         <code class="code-snippet">
-          db.notifications.find({<br>
-          &nbsp;&nbsp;template_id: "REPAY_SUCCESS",<br>
-          &nbsp;&nbsp;user: "nooh"<br>
-          }).sort({timestamp: -1})
+          db.sms_logs.find({type: "DEPOSIT_SUCCESS"})
         </code>
-        <p style="font-size: 0.75rem; margin-top: 10px; color: var(--text-muted);">Matches triggered template against predefined financial notification schemas.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<section id="agile">
-  <h2 class="section-title">Agile SDLC Governance</h2>
+<section id="custom">
+  <h2 class="section-title">Designed High-Impact Scenarios</h2>
   <div class="grid">
     <div class="card">
-      <h3>Shift-Left Approach</h3>
-      <p>I integrate quality at the Grooming stage, identifying logic flaws in User Stories before a single line of code is written.</p>
+      <h3>1. Negative Logic: Interest Reversal</h3>
+      <p>Verifying that reversing a transaction correctly restores the interest accrual state without affecting subsequent payments.</p>
     </div>
     <div class="card">
-      <h3>Defect Lifecycle Management</h3>
-      <p>Expertise in <strong>Jira</strong> for tracking complex defect chains. Managed 400+ bugs for diverse projects including Soul Whisper and GymKey.</p>
+      <h3>2. The "Race Condition" Test</h3>
+      <p>Simulating two simultaneous API calls for a single loan payoff to ensure only one transaction completes.</p>
+    </div>
+    <div class="card">
+      <h3>3. Cross-Module Integrity</h3>
+      <p>Verifying that a change in "Customer CRM" status (e.g., Deceased) automatically freezes linked Deposit accounts.</p>
+    </div>
+    <div class="card">
+      <h3>4. Boundary: 100M SYP Threshold</h3>
+      <p>Testing batch opening logic precisely at the maximum system limit to ensure no buffer overflow or logic crashes.</p>
+    </div>
+    <div class="card">
+      <h3>5. UI Responsiveness: Data Tables</h3>
+      <p>Testing 1000+ transaction rows on mobile viewport to ensure vertical/horizontal scrolling doesn't break the UI.</p>
+    </div>
+    <div class="card">
+      <h3>6. API Payload Tampering</h3>
+      <p>Using Postman to intercept a repayment request and changing the <code>amount</code> to a negative value to test server-side rejection.</p>
+    </div>
+    <div class="card">
+      <h3>7. Late Fee Grace Period</h3>
+      <p>Validating that the system does not apply a late fee if payment is received exactly 1 second before the grace period ends.</p>
+    </div>
+    <div class="card">
+      <h3>8. Multi-Currency Ledgering</h3>
+      <p>Verifying exchange rate conversion accuracy when a loan in USD is repaid via a local SYP currency account.</p>
+    </div>
+    <div class="card">
+      <h3>9. Recovery: Batch Timeout</h3>
+      <p>Simulating a network failure during a "Close Batch" operation to ensure the system doesn't leave the batch in a 'Locked' state.</p>
+    </div>
+    <div class="card">
+      <h3>10. Database Schema Evolution</h3>
+      <p>Testing application stability after a MongoDB schema update where optional fields are missing in legacy records.</p>
     </div>
   </div>
 </section>
 
 <section id="experience" style="background: #080b0e;">
-  <h2 class="section-title">Professional Path</h2>
-  
-  <div class="timeline-item">
-    <h3>MFSYS Technologies</h3>
-    <p style="color: var(--primary-glow); font-weight: 800;">QA Engineer (On-site) | Sept 2025 – Present</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="card" style="margin-bottom: 20px;">
+    <h4>MFSYS Technologies | Sept 2025 – Present</h4>
     <ul>
-      <li>Validation of <strong>User Batch Management</strong> with 100M SYP operational constraints.</li>
-      <li>API Engineering for <strong>Ciihive Banking</strong> integration (Token, CRM, Deposit).</li>
-      <li>Verifying Write-Off reversals and ledger atomic transactions via SQL.</li>
+      <li>Specializing in Batch Management and Ciihive Banking APIs.</li>
+      <li>Verifying Write-Off logic and transaction reversals via SQL.</li>
     </ul>
   </div>
-
-  <div class="timeline-item">
-    <h3>Innovador Solutions</h3>
-    <p style="color: var(--primary-glow); font-weight: 800;">QA Engineer | June 2025 – Sept 2025</p>
+  <div class="card">
+    <h4>Innovador Solutions | June 2025 – Sept 2025</h4>
     <ul>
-      <li><strong>Soul Whisper:</strong> E2E testing for a digital therapy platform, ensuring user data privacy.</li>
-      <li><strong>GymKey:</strong> Validated membership SaaS logic and multi-device UI responsiveness.</li>
-      <li><strong>WWR:</strong> Identified logic inconsistencies in leaderboard synchronization and quiz scoring.</li>
+      <li>Manual testing for Soul Whisper (Mental Health) and GymKey platforms.</li>
+      <li>Reported 400+ bugs across mobile and web interfaces.</li>
     </ul>
   </div>
 </section>
 
 <section id="portal">
   <div class="portal-banner">
-    <h2 style="font-size: 2.5rem; margin: 0;">Project Artifact Repository</h2>
-    <p style="color: var(--text-muted); margin-top: 10px;">Deep-dive into full Test Plans, RTMs, and Postman Collection exports.</p>
-    <a href="#" target="_blank" class="btn-main">View Full Documentation</a>
+    <h2>Full Work Artifacts</h2>
+    <p style="color: var(--text-muted);">RTMs, Test Plans, and full Postman Collections are documented in my secondary repository.</p>
+    <a href="#" target="_blank" class="btn-main">Visit Documentation Portal</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 MUHAMMAD NOOH | QUALITY ASSURANCE ENGINEERING</p>
+  <p>© 2026 MUHAMMAD NOOH | Lead QA Engineer</p>
   <p style="font-size: 0.8rem; margin-top: 10px;">Bachelors in Software Engineering - Kohat University of Science and Technology</p>
 </footer>
 
