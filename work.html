@@ -2,217 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Nooh | Senior QA Engineer</title>
+  <title>Work Repository | Muhammad Nooh</title>
   <style>
-    :root {
-      --bg: #05070a;
-      --surface: #0d1117;
-      --card: #161b22;
-      --primary: #2ea043;
-      --border: rgba(46, 160, 67, 0.3);
-      --text: #e6edf3;
-      --text-dim: #8b949e;
-    }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #f4f7f9; color: #334e68; margin: 0; padding: 40px; }
+    .container { max-width: 1000px; margin: auto; background: white; padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .back { text-decoration: none; color: #102a43; font-weight: 700; font-size: 0.9rem; }
+    h1 { color: #102a43; border-bottom: 3px solid #bcccdc; padding-bottom: 15px; margin-top: 30px; }
     
-    /* Hero Section with Radial Gradient */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at center, #111d13 0%, var(--bg) 100%);
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    h1 { font-size: 5rem; margin: 0; letter-spacing: -3px; background: linear-gradient(to bottom, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { font-size: 1.5rem; color: var(--primary); font-weight: 300; margin-top: 10px; }
-
-    nav {
-      position: sticky; top: 0; background: rgba(13, 17, 23, 0.9);
-      backdrop-filter: blur(10px); padding: 20px; text-align: center; z-index: 1000; border-bottom: 1px solid var(--border);
-    }
-    nav a { color: var(--text-dim); text-decoration: none; margin: 0 20px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
-    nav a:hover { color: var(--primary); }
-
-    section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-    .section-title { font-size: 2.5rem; margin-bottom: 50px; color: var(--primary); display: flex; align-items: center; gap: 20px; }
-    .section-title::after { content: ""; height: 1px; background: var(--border); flex-grow: 1; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .card { background: var(--card); border: 1px solid var(--border); padding: 40px; border-radius: 15px; transition: 0.4s; }
-    .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-
-    .btn-cta {
-      display: inline-block; padding: 20px 50px; background: var(--primary); color: white;
-      text-decoration: none; border-radius: 10px; font-weight: 800; margin-top: 40px;
-      transition: 0.3s; box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
-    }
-    .btn-cta:hover { transform: scale(1.05); background: #238636; }
-
-    footer { padding: 60px; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>MUHAMMAD NOOH</h1>
-  <div class="subtitle">FinTech QA Lead & API Integrity Engineer</div>
-</header>
-
-<nav>
-  <a href="#expertise">Expertise</a>
-  <a href="#experience">Experience</a>
-  <a href="#repository">Technical Lab</a>
-</nav>
-
-<section id="expertise">
-  <h2 class="section-title">Core Competencies</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Banking Logic</h3>
-      <p>Specialist in Batch Management, Loan Write-offs, and 100M SYP threshold validations.</p>
-    </div>
-    <div class="card">
-      <h3>API Engineering</h3>
-      <p>Advanced Postman collections for Ciihive integration, verifying Tokenization and CRM modules.</p>
-    </div>
-    <div class="card">
-      <h3>Data Integrity</h3>
-      <p>Backend validation using SQL for Ledger reconciliation and MongoDB for SMS template audits.</p>
-    </div>
-  </div>
-</section>
-
-<section id="experience" style="background: #080b0e;">
-  <h2 class="section-title">Professional Experience</h2>
-  <div class="card" style="margin-bottom: 30px;">
-    <h4>MFSYS Technologies | Sep 2025 – Present</h4>
-    <p>Driving quality for core financial systems, managing the complete STLC for User Batch operations and Loan Advanced modules.</p>
-  </div>
-  <div class="card">
-    <h4>Innovador Solutions | June 2025 – Sep 2025</h4>
-    <p>Manual and Exploratory testing specialist. Reported 400+ defects across GymKey, Soul Whisper, and WWR ranking systems.</p>
-  </div>
-</section>
-
-<section id="repository" style="text-align: center;">
-  <div style="background: linear-gradient(145deg, #111d13, #05070a); padding: 80px; border-radius: 30px; border: 1px solid var(--primary);">
-    <h2>Technical Work Repository</h2>
-    <p style="color: var(--text-dim); max-width: 600px; margin: 20px auto;">Access 50+ professional test cases covering Login Security, Banking Transactions, and Database Orchestration.</p>
-    <a href="work.html" class="btn-cta">Explore Test Laboratory</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Muhammad Nooh | Islamabad, Pakistan</p>
-</footer>
-
-</body>
-</html>
-2. The Technical Laboratory (work.html)
-This file contains the "Complex" data. It is formatted as a technical documentation site where you showcase deep-dive test scenarios.
-
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Technical Lab | Muhammad Nooh</title>
-  <style>
-    :root { --bg: #05070a; --card: #161b22; --accent: #d29922; --green: #2ea043; --text: #e6edf3; }
-    body { font-family: 'Fira Code', monospace; background: var(--bg); color: var(--text); margin: 0; padding: 40px; }
-    .container { max-width: 1200px; margin: auto; }
-    .nav-back { color: var(--green); text-decoration: none; margin-bottom: 40px; display: block; }
+    .section-block { margin-top: 40px; }
+    .section-block h2 { color: #243b53; font-size: 1.2rem; text-transform: uppercase; background: #f0f4f8; padding: 10px; border-radius: 4px; }
     
-    h1 { color: var(--green); font-size: 2.5rem; margin-bottom: 50px; }
-    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+    th { text-align: left; background: #f0f4f8; padding: 12px; border: 1px solid #d9e2ec; }
+    td { padding: 12px; border: 1px solid #d9e2ec; vertical-align: top; }
     
-    .test-card { background: var(--card); border: 1px solid #30363d; border-radius: 12px; padding: 30px; position: relative; }
-    .category { color: var(--accent); font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-    
-    .case-list { margin-top: 20px; list-style: none; padding: 0; }
-    .case-list li { padding: 12px 0; border-bottom: 1px solid #21262d; font-size: 0.85rem; }
-    .case-list li strong { color: #fff; }
-    
-    .code-block { background: #000; padding: 15px; border-radius: 6px; color: #7ee787; font-size: 0.8rem; margin-top: 15px; border: 1px solid #333; }
-    .tag { background: rgba(46,160,67,0.15); color: var(--green); padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-right: 5px; }
+    .code { font-family: monospace; background: #f0f4f8; padding: 3px 6px; border-radius: 3px; color: #d32f2f; }
+    .tag { font-weight: bold; color: #102a43; }
   </style>
 </head>
 <body>
 <div class="container">
-  <a href="index.html" class="nav-back">← TERMINAL_BACK_TO_PORTFOLIO</a>
-  <h1>SYSTEM_TEST_LABORATORY_V2.0</h1>
+  <a href="index.html" class="back">← RETURN TO MAIN PROFILE</a>
+  <h1>Documentation & Technical Repository</h1>
 
-  <div class="test-grid">
-    
-    <div class="test-card">
-      <span class="category">Authentication & Security [10 Cases]</span>
-      <ul class="case-list">
-        <li><strong>SEC-01:</strong> Brute force lockout after 5 invalid attempts.</li>
-        <li><strong>SEC-02:</strong> SQL Injection rejection in 'Username' field.</li>
-        <li><strong>SEC-03:</strong> Invalidate JWT tokens immediately upon logout.</li>
-        <li><strong>SEC-04:</strong> MFA trigger logic for unrecognized hardware IDs.</li>
-        <li><strong>SEC-05:</strong> 15-minute idle session auto-termination.</li>
-        <li><strong>SEC-06:</strong> Masking PII in 'Password' and 'OTP' fields.</li>
-        <li><strong>SEC-07:</strong> Prevent concurrent logins on single-user license.</li>
-        <li><strong>SEC-08:</strong> Verify case-sensitivity in complex credentials.</li>
-        <li><strong>SEC-09:</strong> Clear browser cache headers to prevent 'Back' button access.</li>
-        <li><strong>SEC-10:</strong> TLS 1.2+ requirement for all credential transit.</li>
-      </ul>
-    </div>
+  <div class="section-block">
+    <h2>1. Core Banking & Transactions (Functional)</h2>
+    <table>
+      <tr><th>ID</th><th>Scenario</th><th>Professional Logic</th></tr>
+      <tr><td>BNK-01</td><td>Atomic Deposits</td><td>Ensuring full rollback if DB connection drops during a credit entry.</td></tr>
+      <tr><td>BNK-02</td><td>Loan Write-Off</td><td>Validation that account status updates to 'Closed' and ledger balances to zero.</td></tr>
+      <tr><td>BNK-03</td><td>SYP Threshold</td><td>Testing batch opening logic precisely at 100,000,000.00 SYP limits.</td></tr>
+      <tr><td>BNK-04</td><td>Interest Reversal</td><td>Verifying restoration of accrual state after a voided transaction.</td></tr>
+      <tr><td>BNK-05</td><td>Joint Account</td><td>Validation of dual-signature requirements for high-value withdrawals.</td></tr>
+    </table>
+  </div>
 
-    <div class="test-card">
-      <span class="category">Core Banking Operations [10 Cases]</span>
-      <ul class="case-list">
-        <li><strong>BNK-01:</strong> Atomic rollback during Deposit DB failure.</li>
-        <li><strong>BNK-02:</strong> Principal vs Interest split for Loan Repayments.</li>
-        <li><strong>BNK-03:</strong> Reject repayments exceeding the 'Current Payoff' amount.</li>
-        <li><strong>BNK-04:</strong> Block debit transactions on 'Frozen' account status.</li>
-        <li><strong>BNK-05:</strong> Backdated value-date logic for GL reconciliation.</li>
-        <li><strong>BNK-06:</strong> mbmBkmsnumber balance synchronization with UI.</li>
-        <li><strong>BNK-07:</strong> Race condition testing for simultaneous API credits.</li>
-        <li><strong>BNK-08:</strong> 4-decimal precision rounding for tax calculations.</li>
-        <li><strong>BNK-09:</strong> GL Audit log verification for every unique TxID.</li>
-        <li><strong>BNK-10:</strong> Daily transaction limit threshold rejection.</li>
-      </ul>
-    </div>
+  <div class="section-block">
+    <h2>2. Authentication & Security</h2>
+    <table>
+      <tr><th>ID</th><th>Scenario</th><th>Professional Logic</th></tr>
+      <tr><td>SEC-01</td><td>Brute Force</td><td>Locking user profile after 5 failed attempts in under 2 minutes.</td></tr>
+      <tr><td>SEC-02</td><td>SQL Injection</td><td>Testing sanitization on login inputs: <span class="code">' OR 1=1 --</span></td></tr>
+      <tr><td>SEC-03</td><td>Session Expiry</td><td>Automatic termination of auth token after 15 minutes of idle time.</td></tr>
+      <tr><td>SEC-04</td><td>MFA Logic</td><td>Ensuring OTP request triggers for logins from unrecognized Hardware IDs.</td></tr>
+    </table>
+  </div>
 
-    <div class="test-card">
-      <span class="category">Backend & SMS Orchestration [10 Cases]</span>
-      <div class="code-block">db.notifications.find({template_id: "LOAN_REPAY"})</div>
-      <ul class="case-list">
-        <li><strong>MSG-01:</strong> Verify correct template_id for Loan Due alerts.</li>
-        <li><strong>MSG-02:</strong> Dynamic string replacement for {customer_name}.</li>
-        <li><strong>MSG-03:</strong> Record persistence in MongoDB 'notif' collection.</li>
-        <li><strong>MSG-04:</strong> Async status update to 'SENT' upon gateway ACK.</li>
-        <li><strong>MSG-05:</strong> Multi-language trigger based on User Locale.</li>
-        <li><strong>MSG-06:</strong> SMS Gateway timeout retry exponential backoff.</li>
-        <li><strong>MSG-07:</strong> Masking Account Numbers in SMS body text.</li>
-        <li><strong>MSG-08:</strong> Throughput monitoring for 1k+ simultaneous alerts.</li>
-        <li><strong>MSG-09:</strong> MongoDB TTL index verification for log cleanup.</li>
-        <li><strong>MSG-10:</strong> JSON schema integrity for notification payloads.</li>
-      </ul>
-    </div>
+  <div class="section-block">
+    <h2>3. Database & API (Backend)</h2>
+    <table>
+      <tr><th>ID</th><th>Scenario</th><th>Backend Audit</th></tr>
+      <tr><td>DAT-01</td><td>MongoDB SMS</td><td>Verifying <span class="code">template_id</span> matches transaction event type.</td></tr>
+      <tr><td>DAT-02</td><td>SQL Reconciliation</td><td>Auditing <span class="code">mbmBkmsnumber</span> balance via direct SQL query.</td></tr>
+      <tr><td>DAT-03</td><td>API Response</td><td>Validating JSON status codes (200 OK vs 403 Forbidden) for frozen accounts.</td></tr>
+    </table>
+  </div>
 
-    <div class="test-card">
-      <span class="category">Advanced Logic Scenarios [10 Cases]</span>
-      <ul class="case-list">
-        <li><strong>ADV-01:</strong> Interest reversal restoration post-voiding.</li>
-        <li><strong>ADV-02:</strong> 100M SYP Batch opening boundary validation.</li>
-        <li><strong>ADV-03:</strong> CRM-to-Loan module status sync (Deceased/Default).</li>
-        <li><strong>ADV-04:</strong> Late Fee grace period: 1-second accuracy test.</li>
-        <li><strong>ADV-05:</strong> Multi-currency GL conversion rate integrity.</li>
-        <li><strong>ADV-06:</strong> Batch lock recovery post-system crash.</li>
-        <li><strong>ADV-07:</strong> MongoDB schema evolution stability check.</li>
-        <li><strong>ADV-08:</strong> API Payload tampering via Postman Interceptor.</li>
-        <li><strong>ADV-09:</strong> UX Stress: 5000+ row rendering on mobile UI.</li>
-        <li><strong>ADV-10:</strong> Verify 'Write-Off' account closure sequence.</li>
-      </ul>
-    </div>
-
+  <div class="section-block">
+    <h2>4. Advanced High-Impact Scenarios</h2>
+    <ul>
+      <li><strong>Late Fee Accuracy:</strong> Validating that late fees trigger exactly 1 second after the grace period ends.</li>
+      <li><strong>Batch Recovery:</strong> Simulating a crash during a "Close Batch" operation to ensure no orphaned records.</li>
+      <li><strong>Schema Stability:</strong> Checking app reliability after MongoDB optional field updates.</li>
+      <li><strong>UI Stress:</strong> Rendering 5,000 rows of transaction history on low-memory mobile devices.</li>
+    </ul>
   </div>
 </div>
 </body>
