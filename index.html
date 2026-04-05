@@ -20,6 +20,7 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -29,25 +30,12 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--text-main);
-      letter-spacing: -1px;
-    }
-
-    .subtitle {
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-top: 10px;
-    }
+    h1 { margin: 0; font-size: 3rem; font-weight: 800; letter-spacing: -1px; }
+    .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 500; margin-top: 10px; }
 
     nav {
-      position: sticky;
-      top: 0;
-      background: rgba(13, 17, 23, 0.8);
+      position: sticky; top: 0;
+      background: rgba(13, 17, 23, 0.9);
       backdrop-filter: blur(12px);
       padding: 20px;
       text-align: center;
@@ -56,231 +44,149 @@
     }
 
     nav a {
-      color: var(--text-dim);
-      margin: 0 20px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: var(--text-dim); margin: 0 15px;
+      text-decoration: none; font-size: 0.85rem;
+      font-weight: 600; text-transform: uppercase;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
+    nav a:hover { color: var(--accent-color); }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+    h2 { font-size: 1.8rem; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+    h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border-color); }
 
-    h2::after {
-      content: "";
-      height: 1px;
-      flex-grow: 1;
-      background: var(--border-color);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
 
     .card {
       background: var(--card-bg);
-      padding: 35px;
+      padding: 30px;
       border-radius: 12px;
       border: 1px solid var(--border-color);
-      transition: transform 0.3s, border-color 0.3s;
+      transition: 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-color);
-    }
+    .card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
 
     .tag {
-      color: var(--accent-color);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      display: block;
+      color: var(--accent-color); font-size: 0.7rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; margin-bottom: 10px; display: block;
     }
 
-    h3 {
-      margin: 0 0 15px 0;
-      font-size: 1.4rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      color: var(--text-dim);
-    }
-
-    li {
-      margin-bottom: 12px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-    }
-
-    .highlight-box {
-      background: linear-gradient(145deg, #161b22 0%, #0d1117 100%);
-      padding: 40px;
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .highlight-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent-color);
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px;
+    .artifact-box {
       background: #0d1117;
-      border-top: 1px solid var(--border-color);
-      color: var(--text-dim);
+      border: 1px dashed var(--accent-color);
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      color: #c9d1d9;
     }
 
+    ul { list-style: none; padding: 0; color: var(--text-dim); }
+    li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    li::before { content: "→"; position: absolute; left: 0; color: var(--accent-color); }
+
+    footer { text-align: center; padding: 60px; background: #0d1117; border-top: 1px solid var(--border-color); color: var(--text-dim); }
+    
     .contact-btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      margin-top: 20px;
+      display: inline-block; padding: 12px 30px;
+      background: var(--accent-color); color: white;
+      text-decoration: none; border-radius: 6px; font-weight: 600;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      nav { display: none; }
-    }
+    @media (max-width: 600px) { h1 { font-size: 2.2rem; } nav { display: none; } }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Muhammad Nooh</h1>
-  <p class="subtitle">QA Engineer | Financial Systems Specialist</p>
-  <p style="color: var(--text-dim); font-size: 0.9rem;">Islamabad, Pakistan | 03349 9567625 </p>
+  <p class="subtitle">QA Engineer | Banking & API Specialist</p>
+  <p style="color: var(--text-dim);">Islamabad, Pakistan | sydmuhammadnooh@gmail.com</p>
 </header>
 
 <nav>
-  <a href="#methodology">Methodology</a>
-  <a href="#api">API & Database</a>
+  <a href="#artifacts">Test Documentation</a>
+  <a href="#api">API Testing</a>
   <a href="#experience">Experience</a>
-  <a href="#banking">Banking Logic</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="methodology">
-  <h2>Testing Methodology</h2>
-  <div class="card" style="border-left: 4px solid var(--accent-color);">
-    <span class="tag">Strategy</span>
-    <p>
-      I apply a high-precision approach to the Software Testing Life Cycle (STLC)[cite: 7, 9]. My methodology is designed to secure financial products by identifying architectural flaws early in the development cycle[cite: 7, 18].
-    </p>
-    <ul>
-      <li>Functional & Regression Testing: Ensuring web and mobile stability[cite: 14, 23].</li>
-      <li>Smoke & Sanity Testing: High-speed validation before deployment[cite: 21].</li>
-      <li>UAT Coordination: Finalizing product readiness for the end-user[cite: 21].</li>
-    </ul>
+<section id="artifacts">
+  <h2>Test Documentation & Artifacts</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Banking Operations</span>
+      <h3>User Batch Management</h3>
+      <p>Validation of operational batch lifecycles in micro-finance systems.</p>
+      <div class="artifact-box">
+        <strong>Test Coverage:</strong><br>
+        • Validating batch opening with 100M SYP thresholds.<br>
+        • Ensuring restriction of duplicate active batches (ERR_TRN_B_0010).<br>
+        • Verifying approval/rejection workflows for batch closures.
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Loan Advanced Ops</span>
+      <h3>Write-Off Workflows</h3>
+      <p>Technical verification of debt write-off processes and ledger integrity.</p>
+      <div class="artifact-box">
+        <strong>Validation Scope:</strong><br>
+        • Account closure verification post write-off execution.<br>
+        • Testing field locking/read-only states for fetched loan data.<br>
+        • Detecting pending charges to block unauthorized write-offs.
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="api">
-  <h2>API & Database Analysis</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="tag">Postman</span>
-      <h3>API Integrity</h3>
-      <p>Verifying the backend backbone of financial systems like the Ciihive Banking API[cite: 6, 61, 63]:</p>
-      <ul>
-        <li>Validating status codes, JSON structures, and data integrity[cite: 17, 64].</li>
-        <li>Testing Token, CRM, and Transaction endpoints[cite: 63].</li>
-        <li>Analyzing API-level defects to ensure secure data flow[cite: 65, 66].</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="tag">SQL / Mongo</span>
-      <h3>Data Validation</h3>
-      <p>Using SQL to ensure that what the user sees matches the financial ledger[cite: 9, 17, 25]:</p>
-      <ul>
-        <li>Cross-referencing frontend actions with backend database records[cite: 17, 25].</li>
-        <li>Inspecting transaction histories and data persistence for accuracy[cite: 17].</li>
-        <li>Root cause analysis for bugs impacting data consistency[cite: 22].</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="banking">
-  <h2>Financial Integration Logic</h2>
-  <div class="highlight-box">
-    <h3>Banking Module Expertise</h3>
-    <p>At MFSYS Technologies, I manage testing for complex, multi-module banking flows[cite: 13, 14, 15]:</p>
+  <h2>Aconnect API Testing</h2>
+  <div class="card" style="border-left: 4px solid var(--accent-color);">
+    <span class="tag">Postman Integration Suite</span>
+    <h3>Aconnect Middleware Validation</h3>
+    <p>Comprehensive API testing ensuring secure communication between banking layers and Ciihive integration.</p>
     <ul>
-      <li><strong>Customer Lifecycle:</strong> Complete validation of CRM onboarding and approvals[cite: 63].</li>
-      <li><strong>Financial Accounts:</strong> Testing logic for Deposit, Loan, and TDR account modules[cite: 63].</li>
-      <li><strong>Transaction Engine:</strong> Ensuring 100% accuracy in authorization and posting flows[cite: 63].</li>
-      <li><strong>Reversals:</strong> Validating system state recovery after cancelled or reversed transactions.</li>
+      <li><strong>Transaction Integrity:</strong> Testing Account-to-GL transactions and verifying balance-based rejection logic.</li>
+      <li><strong>Lifecycle Management:</strong> Validating transaction cancellation, rejection before approval, and duplicate approval detection (ERR_TRN_B_0017).</li>
+      <li><strong>Response Logic:</strong> Verifying server responses for frozen accounts and joint account verifications.</li>
     </ul>
+    <div class="artifact-box" style="background: #000; border: 1px solid #333;">
+      <span style="color: #d29922;">// Automated Regression Script</span><br>
+      pm.test("Transaction Status Check", function () {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;pm.response.to.have.status(200);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;pm.expect(pm.response.text()).to.include("Request successful");<br>
+      });
+    </div>
   </div>
 </section>
 
 <section id="experience">
-  <h2>Experience</h2>
+  <h2>Professional Experience</h2>
   <div class="grid">
     <div class="card">
-      <span class="tag">Present</span>
-      <h3>MFSYS Technologies</h3>
-      <p><strong>QA Engineer (On-site)</strong> [cite: 13]</p>
-      <p style="font-size: 0.9rem; color: var(--text-dim);">Sept 2025 – Present [cite: 13]</p>
+      <span class="tag">MFSYS Technologies</span>
+      <h3>QA Engineer (On-site)</h3>
+      <p style="font-size: 0.9rem; color: var(--text-dim);">Sept 2025 – Present</p>
       <ul>
-        <li>Manual, functional, and regression testing on financial systems[cite: 14].</li>
-        <li>Bug tracking and defect reporting using Jira[cite: 16].</li>
+        <li>Manual, functional, and regression testing on core financial systems.</li>
+        <li>Analyzing banking APIs using Postman and SQL query validation.</li>
+        <li>Managing defect lifecycles and sprint coverage within Jira.</li>
       </ul>
     </div>
     <div class="card">
-      <span class="tag">Remote</span>
-      <h3>Innovador Solutions</h3>
-      <p><strong>QA Engineer</strong> [cite: 23]</p>
-      <p style="font-size: 0.9rem; color: var(--text-dim);">June 2025 – Present [cite: 23]</p>
+      <span class="tag">Innovador Solutions</span>
+      <h3>QA Engineer (Remote)</h3>
+      <p style="font-size: 0.9rem; color: var(--text-dim);">June 2025 – Present</p>
       <ul>
-        <li>E2E testing for GymKey, Soul Whisper, and WWR projects[cite: 41, 48, 55].</li>
-        <li>Reported 400+ defects across diverse platforms[cite: 46, 52].</li>
+        <li>E2E manual testing for Soul Whisper (Mental Health) and GymKey platforms.</li>
+        <li>Reported 400+ bugs across mobile and web interfaces.</li>
+        <li>Performed cross-browser and exploratory testing for quiz/leaderboard logic.</li>
       </ul>
     </div>
   </div>
@@ -288,14 +194,14 @@
 
 <section id="contact" style="text-align: center;">
   <h2>Contact</h2>
-  <p>Available for on-site opportunities in Islamabad or remote global projects.</p>
-  <p>📧 sydmuhammadnooh@gmail.com [cite: 2]</p>
-  <a href="https://www.linkedin.com/in/muhammad-nooh-1a570b387" target="_blank" class="contact-btn">LinkedIn Profile</a>
+  <p>Interested in high-quality QA solutions for financial or web platforms?</p>
+  <p>📧 sydmuhammadnooh@gmail.com</p>
+  <a href="https://www.linkedin.com/in/muhammad-nooh-1a570b387" target="_blank" class="contact-btn">View LinkedIn</a>
 </section>
 
 <footer>
-  <p>© 2026 Muhammad Nooh | QA Portfolio</p>
-  <p>Bachelors in Software Engineering, Kohat University of Science and Technology [cite: 38, 39]</p>
+  <p>© 2026 Muhammad Nooh | QA Engineering Portfolio</p>
+  <p>Bachelors in Software Engineering | Kohat University of Science and Technology</p>
 </footer>
 
 </body>
